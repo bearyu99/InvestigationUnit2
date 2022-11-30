@@ -1,0 +1,12 @@
+// @mixin font($size: 12pt, $weight: 400, $color: #000000){
+//     font-size: $size;
+//     font-weight: $weight;
+//     color: $color;
+// }
+
+@mixin customer($index: 0, $url: none){
+    z-index: $index;
+    background-size: cover;
+    background-position: center;
+    background-image: url($url);
+}
