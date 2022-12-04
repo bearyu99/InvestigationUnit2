@@ -5,6 +5,17 @@ const info = document.getElementById("info-section");
 const service = document.getElementById("service-section");
 const img = "https://hankookhos.site/images/lee_portrait.png";
 
+const ham = document.querySelector(".menu");
+ham.addEventListener("click", (e) => {
+  ham.classList.toggle("open");
+  document.querySelector(".menu-group").classList.toggle("wide");
+  document.querySelector("#menu").classList.toggle("visible");
+  setTimeout(
+    () => document.querySelector("#menu").classList.toggle("fade"),
+    100
+  );
+});
+
 menu.forEach((list) => {
   list.addEventListener("click", (e) => {
     const id = e.target.id;

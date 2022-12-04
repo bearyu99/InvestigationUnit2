@@ -1,33 +1,13 @@
 @import "reset";
 @import "_mixins";
+@import "_responsive";
+@import "_btn";
 @font-face {
   font-family: "IBMPlexSansKR-Regular";
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff")
     format("woff");
   font-weight: normal;
   font-style: normal;
-}
-
-@media screen and (max-width: 1024px) {
-  body {
-    background-image: none !important;
-    nav {
-      display: none;
-    }
-    section:not(#mobile-section) {
-      * {
-        display: none;
-        visibility: hidden;
-      }
-    }
-    #mobile-section {
-      display: block !important;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  }
 }
 
 body {
@@ -44,14 +24,98 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  // transition: ease-in-out 0.5s;
+  @include mobile {
+    background-size: 200%;
+  }
+}
+
+.btn13 {
+  @include btn(calc(100vw - 85px), 5.25px);
+  .icon {
+    @include icon(4px, 30px);
+    &:before {
+      @include icon-before(4px, 30px, -10px);
+    }
+    &:after {
+      @include icon-after(4px, 30px, 10px);
+    }
+  }
+  &.open {
+    .icon {
+      transition: 0.5s;
+      &:before {
+        transform: rotateZ(-45deg) scaleX(0.75) translate(-10px, -3px);
+      }
+      &:after {
+        transform: rotateZ(45deg) scaleX(0.75) translate(-10px, 3px);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#mobile-nav {
+  display: none;
+  width: calc(100% - 10px);
+  @include mobile {
+    display: inline;
+  }
+  .menu-group {
+    transition: 0.5s;
+    @include mobile {
+      display: grid;
+      grid-template-rows: 1fr 5fr;
+      width: calc(100% - 10px);
+      height: 75px;
+      border-radius: 50px;
+      background-color: #2e56a6;
+    }
+    .menu-logo {
+      @include mobile {
+        display: flex;
+        align-items: center;
+        height: 75px;
+      }
+      img {
+        padding-left: 40px;
+        height: 35px;
+        object-fit: scale-down;
+      }
+    }
+    &.wide {
+      height: 400px;
+      border-radius: 0;
+    }
+  }
 }
 
 nav {
   position: fixed;
   top: 30px;
   left: 50px;
+  @include mobile {
+    display: none;
+    top: 10px;
+    left: 10px;
+  }
   ul {
+    @include mobile {
+      display: none;
+      opacity: 1;
+      transition-duration: 1s;
+      transition-property: opacity;
+      &.fade {
+        opacity: 0;
+      }
+      &.visible {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+    }
     li {
       float: left;
       margin-right: 12px;
@@ -61,6 +125,13 @@ nav {
       font-size: 10pt;
       font-weight: 500;
       transition: ease-in-out 0.2s;
+      @include mobile {
+        border: none;
+        padding: 20 100;
+        margin: 0;
+        color: white;
+        font-size: 12pt;
+      }
       &:hover {
         background-color: #2e56a6;
         color: white;
@@ -76,6 +147,9 @@ nav {
 #service-section {
   margin: 0px 50px;
   height: 100%;
+  @include mobile {
+    margin: 0 10px;
+  }
 }
 
 #home-section {
@@ -83,11 +157,21 @@ nav {
   grid-template-columns: 75% 25%;
   grid-template-rows: 40% minmax(max-content, 10%) minmax(max-content, 10%) 40%;
   transition: ease-in-out 0.3s;
+  @include mobile {
+    grid-template-rows: 10% 1fr 1fr;
+  }
   .name {
     display: flex;
     grid-column: span 2;
     flex-direction: column;
     margin-top: 7em;
+    @include mobile {
+      grid-column: 1 / -1;
+      grid-row: -2 / -1;
+      place-content: end;
+      margin: 0;
+      margin-bottom: 40px;
+    }
     span {
       font-size: 20pt;
       font-weight: 700;
@@ -107,6 +191,9 @@ nav {
     grid-column-start: 2;
     grid-row: 2 / 4;
     justify-content: flex-end;
+    @include mobile {
+      display: none;
+    }
     .customer-icon {
       padding-bottom: 20px;
       .item {
@@ -167,6 +254,9 @@ nav {
     align-items: flex-end;
     width: 100%;
     height: 100%;
+    @include mobile {
+      display: none;
+    }
     .quotation-icon {
       display: flex;
       justify-content: center;
@@ -193,6 +283,11 @@ nav {
     font-size: 32pt;
     font-weight: 900;
     line-height: 140%;
+    @include mobile {
+      grid-column: 1 / -1;
+      grid-row: 2 / 3;
+      font-size: 19pt;
+    }
     li {
       span {
         text-decoration: underline;
@@ -207,6 +302,9 @@ nav {
     align-items: center;
     margin: 15% 0px;
     background-color: #2e56a6;
+    @include mobile {
+      display: none;
+    }
     img {
       padding: 50px;
       max-width: calc(100% - 100px);

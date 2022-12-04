@@ -6,7 +6,25 @@
     <title>한국요양병원</title>
   </head>
   <body>
-    <!-- Navigation Bar -->
+    <!-- Mobile Navigation Bar -->
+    <nav id="mobile-nav">
+      <div class="menu-group">
+        <div class="menu-logo">
+          <img src="./images/brand-logo.png" />
+        </div>
+        <div class="menu btn13" data-menu="13">
+          <div class="icon"></div>
+        </div>
+        <ul id="menu" class="fade">
+          <li id="home">병원소개</li>
+          <li id="reserve">병원예약</li>
+          <li id="info">진료안내</li>
+          <li id="service">고객센터</li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- Desktop Navigation Bar -->
     <nav>
       <ul id="menu">
         <li id="home">병원소개</li>
@@ -74,6 +92,6 @@
       <span>모바일 기기에서 지원되지 않는 사이트입니다.</span>
     </section>
 
-    <script src="dist/javascript/app.js"></script>
+    <script src="app.js"></script>
   </body>
 </html>
