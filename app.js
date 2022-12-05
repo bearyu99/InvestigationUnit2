@@ -20,6 +20,7 @@ function selectRemove() {
   menu.forEach((e) => {
     e.classList.remove("select");
   });
+  console.log("select class was removed");
 }
 
 function sectionVisible(id) {
@@ -35,11 +36,11 @@ function sectionVisible(id) {
 menu.forEach((list) => {
   list.addEventListener("click", (e) => {
     const id = e.target.id;
+    selectRemove();
     switch (id) {
       case "home":
         console.log("You clicked " + id);
-        // Select 클래스 제거 및 추가
-        selectRemove();
+        // Select 클래스 추가
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
@@ -47,8 +48,7 @@ menu.forEach((list) => {
         break;
       case "reserve":
         console.log("You clicked " + id);
-        // Select 클래스 제거 및 추가
-        selectRemove();
+        // Select 클래스 추가
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
@@ -56,8 +56,7 @@ menu.forEach((list) => {
         break;
       case "info":
         console.log("You clicked " + id);
-        // Select 클래스 제거 및 추가
-        selectRemove();
+        // Select 클래스 추가
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
@@ -65,8 +64,7 @@ menu.forEach((list) => {
         break;
       case "service":
         console.log("You clicked " + id);
-        // Select 클래스 제거 및 추가
-        selectRemove();
+        // Select 클래스 추가
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
