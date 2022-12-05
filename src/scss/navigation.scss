@@ -1,0 +1,122 @@
+@import "reset";
+@import "_btn";
+@import "_responsive";
+
+.btn {
+  @include btn(calc(100vw - 85px), 5.25px);
+  .icon {
+    @include icon(4px, 30px);
+    &:before {
+      @include icon-before(4px, 30px, -10px);
+    }
+    &:after {
+      @include icon-after(4px, 30px, 10px);
+    }
+  }
+  &.open {
+    .icon {
+      transition: 0.5s;
+      &:before {
+        transform: rotateZ(-45deg) scaleX(0.75) translate(-10px, -3px);
+      }
+      &:after {
+        transform: rotateZ(45deg) scaleX(0.75) translate(-10px, 3px);
+      }
+    }
+  }
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+#mobile-nav {
+  display: none;
+  width: calc(100% - 10px);
+  @include mobile {
+    display: inline;
+  }
+  .menu-group {
+    transition: 0.5s;
+    @include mobile {
+      display: grid;
+      grid-template-rows: 1fr 5fr;
+      width: calc(100% - 10px);
+      height: 75px;
+      border-radius: 50px;
+      background-color: #2e56a6;
+    }
+    .menu-logo {
+      @include mobile {
+        display: flex;
+        align-items: center;
+        height: 75px;
+      }
+      img {
+        padding-left: 40px;
+        height: 35px;
+        object-fit: scale-down;
+      }
+    }
+    &.wide {
+      height: 400px;
+      border-radius: 0;
+    }
+  }
+}
+
+nav {
+  position: fixed;
+  top: 30px;
+  left: 50px;
+  @include mobile {
+    display: none;
+    top: 10px;
+    left: 10px;
+  }
+  ul {
+    @include mobile {
+      display: none;
+      opacity: 1;
+      transition-duration: 1s;
+      transition-property: opacity;
+      &.fade {
+        opacity: 0;
+      }
+      &.visible {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+      }
+    }
+    li {
+      float: left;
+      margin-right: 12px;
+      padding: 10px 20px;
+      border: 1px solid #c3c4ca;
+      border-radius: 50px;
+      font-size: 10pt;
+      font-weight: 500;
+      transition: ease-in-out 0.2s;
+      cursor: pointer;
+      @include mobile {
+        border: none;
+        padding: 20 100;
+        margin: 0;
+        color: rgb(212, 212, 212);
+        font-size: 12pt;
+      }
+      &:hover {
+        background-color: #2e56a6;
+        color: white;
+      }
+      &.select {
+        background-color: #2e56a6;
+        color: white;
+        @include mobile {
+          font-weight: 900;
+        }
+      }
+    }
+  }
+}
