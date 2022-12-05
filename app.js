@@ -37,55 +37,39 @@ menu.forEach((list) => {
     const id = e.target.id;
     switch (id) {
       case "home":
-        console.log("병원소개를 클릭함");
+        console.log("You clicked " + id);
         // Select 클래스 제거 및 추가
         selectRemove();
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
-        // home.style.display = "";
-        // reserve.style.display = "none";
-        // info.style.display = "none";
-        // service.style.display = "none";
         document.body.style.backgroundImage = "url(" + img + ")";
         break;
       case "reserve":
-        console.log("병원예약을 클릭함");
+        console.log("You clicked " + id);
         // Select 클래스 제거 및 추가
         selectRemove();
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
-        // home.style.display = "none";
-        // reserve.style.display = "";
-        // info.style.display = "none";
-        // service.style.display = "none";
         document.body.style.backgroundImage = "none";
         break;
       case "info":
-        console.log("진료안내를 클릭함");
+        console.log("You clicked " + id);
         // Select 클래스 제거 및 추가
         selectRemove();
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
-        // home.style.display = "none";
-        // reserve.style.display = "none";
-        // info.style.display = "";
-        // service.style.display = "none";
         document.body.style.backgroundImage = "none";
         break;
       case "service":
-        console.log("고객센터를 클릭함");
+        console.log("You clicked " + id);
         // Select 클래스 제거 및 추가
         selectRemove();
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
-        // home.style.display = "none";
-        // reserve.style.display = "none";
-        // info.style.display = "none";
-        // service.style.display = "";
         document.body.style.backgroundImage = "none";
         break;
       default:
