@@ -125,17 +125,24 @@ nav {
       font-size: 10pt;
       font-weight: 500;
       transition: ease-in-out 0.2s;
+      cursor: pointer;
       @include mobile {
         border: none;
         padding: 20 100;
         margin: 0;
-        color: white;
+        color: rgb(212, 212, 212);
         font-size: 12pt;
       }
       &:hover {
         background-color: #2e56a6;
         color: white;
-        cursor: pointer;
+      }
+      &.select {
+        background-color: #2e56a6;
+        color: white;
+        @include mobile {
+          font-weight: 900;
+        }
       }
     }
   }
