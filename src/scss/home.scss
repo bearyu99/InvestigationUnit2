@@ -10,6 +10,9 @@
   @include mobile {
     grid-template-rows: 10% 1fr 1fr;
   }
+  * {
+    z-index: 5;
+  }
   .name {
     display: flex;
     grid-column: span 2;
@@ -157,8 +160,7 @@
     }
     img {
       padding: 50px;
-      max-width: calc(100% - 100px);
-      object-fit: scale-down;
+      width: 100%;
     }
   }
 }

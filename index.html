@@ -8,12 +8,14 @@
   <body>
     <!-- Mobile Navigation Bar -->
     <nav id="mobile-nav">
-      <div class="menu-group">
-        <div class="menu-logo">
-          <img src="./images/brand-logo.png" />
-        </div>
-        <div class="menu btn">
-          <div class="icon"></div>
+      <div class="menu-group" id="mobile-menu">
+        <div class="nav-btn-group">
+          <div class="menu-logo">
+            <img src="./images/brand-logo.png" />
+          </div>
+          <div class="menu btn">
+            <div class="icon"></div>
+          </div>
         </div>
         <ul id="menu" class="fade">
           <li id="home" class="select">병원소개</li>
@@ -71,11 +73,8 @@
       </div>
       <div class="logo"><img src="./images/brand-logo.png"</div>
     </section>
-
     <!-- Reservation Page -->
-    <section id="reserve-section" style="display: none">
-      <span>예약하기</span>
-    </section>
+    <section id="reserve-section" style="display: none"></section>
 
     <!-- Info Page -->
     <section id="info-section" style="display: none">
@@ -84,9 +83,98 @@
 
     <!-- Service Page -->
     <section id="service-section" style="display: none">
-      <span>고객센터</span>
+      <div class="container">
+        <p>자주 묻는 질문</p>
+        <div class="accordion">
+          <div class="accordion-item">
+            <button id="accordion-button-1" aria-expanded="false">
+              <span class="accordion-title"> 질문 1 </span>
+              <span class="icon" aria-hidden="true"> </span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                viverra suspendisse potenti.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-2" aria-expanded="false">
+              <span class="accordion-title"> 질문 2 </span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                viverra suspendisse potenti.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-3" aria-expanded="false">
+              <span class="accordion-title">
+                Will we ever discover aliens?
+              </span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                viverra suspendisse potenti.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-4" aria-expanded="false">
+              <span class="accordion-title">
+                How much does the Earth weigh?
+              </span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                viverra suspendisse potenti.
+              </p>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <button id="accordion-button-5" aria-expanded="false">
+              <span class="accordion-title"> How do airplanes stay up? </span>
+              <span class="icon" aria-hidden="true"></span>
+            </button>
+            <div class="accordion-content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                Elementum sagittis vitae et leo duis ut. Ut tortor pretium
+                viverra suspendisse potenti.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="faq-img r-container">
+        <img src="https://picsum.photos/400/400/?image=15" />
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Elementum
+          sagittis vitae et leo duis ut. Ut tortor pretium viverra suspendisse
+          potenti.
+        </p>
+        <!-- <a href="">asd</a> -->
+        <span>더 보기</span>
+      </div>
     </section>
-
+    <div class="bg-portrait"><img src="images/portrait.png" /></div>
     <script src="app.js"></script>
   </body>
 </html>
