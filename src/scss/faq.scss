@@ -1,0 +1,194 @@
+@import "reset";
+@import "_mixins";
+@import "_responsive";
+
+$bg: #e5e6ed;
+$text: #555558;
+$gray: #4d5974;
+$lightgray: #e5e5e5;
+$blue: #2e56a6;
+
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+#service-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin: 0;
+  padding: 0;
+  color: $text;
+  min-height: 100vh;
+  @include mobile {
+    z-index: 0;
+    justify-content: flex-start;
+    flex-direction: column;
+  }
+  * {
+    z-index: 5;
+  }
+}
+
+.faq-img {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 75em;
+  height: 100vh;
+  //   overflow: hidden;
+  @include mobile {
+    width: 100%;
+  }
+  img {
+    object-fit: cover;
+    width: 400px;
+    height: 400px;
+    margin-bottom: 2em;
+    @include mobile {
+      max-width: 80vmin;
+      max-height: 80vmin;
+    }
+  }
+  p {
+    margin-bottom: 2em;
+    text-align: center;
+    font-size: 20px;
+    line-height: 1.4;
+  }
+  //   a {
+  //     margin-bottom: 1.5em;
+  //     font-size: 16px;
+  //     text-decoration: none;
+  //     color: $bg;
+  //   }
+  span {
+    width: 100%;
+    max-width: 200px;
+    padding: 17px 0;
+    border-radius: 50px;
+    color: $text;
+    background-color: $bg;
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+    &:hover {
+      color: white;
+      background-color: $blue;
+    }
+  }
+}
+
+.r-container {
+  max-width: 40rem;
+}
+
+.container {
+  height: inherit;
+  padding-top: 17.5rem;
+  max-width: 40rem;
+  @include mobile {
+    height: 100vh;
+    padding-top: 8rem;
+    padding-right: 0;
+    padding-bottom: 2rem;
+  }
+  p {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 1em;
+  }
+}
+
+.accordion {
+  .accordion-item {
+  }
+  button {
+    position: relative;
+    display: block;
+    text-align: left;
+    width: 100%;
+    padding: 1.3em;
+    color: $text;
+    font-size: 1.15rem;
+    font-weight: 400;
+    border: none;
+    background: none;
+    outline: none;
+    &:hover,
+    &:focus {
+      cursor: pointer;
+      color: $blue;
+      &::after {
+        cursor: pointer;
+        // color: $blue;
+        // border: 1px solid $blue;
+      }
+    }
+    .accordion-title {
+      padding: 1em 1.5em 1em 0em;
+    }
+    .icon {
+      display: inline-block;
+      position: absolute;
+      top: 23px;
+      right: 1.3em;
+      width: 22px;
+      height: 22px;
+      &::before {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 10px;
+        left: 6px;
+        width: 10px;
+        height: 2px;
+        background: currentColor;
+      }
+      &::after {
+        display: block;
+        position: absolute;
+        content: "";
+        top: 6px;
+        left: 10px;
+        width: 2px;
+        height: 10px;
+        background: currentColor;
+      }
+    }
+  }
+  button[aria-expanded="true"] {
+    color: $blue;
+    .icon {
+      &::after {
+        width: 0;
+      }
+    }
+    + .accordion-content {
+      opacity: 1;
+      max-height: 12em;
+    }
+  }
+  .accordion-content {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    background-color: $blue;
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      line-height: 1.6;
+      margin: 1.5em;
+      color: white;
+      @include mobile {
+        line-height: 1;
+      }
+    }
+  }
+}
