@@ -1,6 +1,7 @@
 @import "reset";
 @import "navigation";
 @import "home";
+@import "reserve";
 @import "faq";
 @import "_mixins";
 @import "_responsive";
@@ -26,7 +27,7 @@ body {
 
 @keyframes mbackground {
   100% {
-    background-size: 6000px 120vmax;
+    background-size: 6000px 150vmax;
   }
 }
 
@@ -47,11 +48,11 @@ body {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  animation: background 20s infinite alternate linear;
+  animation: background 30s infinite alternate linear;
   @include mobile {
     background-repeat: no-repeat;
-    animation: mbackground 20s infinite alternate linear;
-    background-size: 2500px 120vmax;
+    animation: mbackground 30s infinite alternate linear;
+    background-size: 2500px 150vmax;
   }
 }
 
@@ -71,6 +72,19 @@ body {
   }
 }
 
+.title {
+  font-size: 20pt;
+  font-weight: 700;
+  line-height: 170%;
+}
+
+.sub-content {
+  width: 100%;
+  line-height: 140%;
+  text-align: justify;
+  margin-bottom: 2rem;
+}
+
 #home-section,
 #reserve-section,
 #info-section,
@@ -80,4 +94,9 @@ body {
   @include mobile {
     margin: 0 10px;
   }
+}
+
+#reserve-section,
+#info-section {
+  padding-top: 7rem;
 }

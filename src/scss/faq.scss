@@ -1,12 +1,6 @@
 @import "reset";
-@import "_mixins";
 @import "_responsive";
-
-$bg: #e5e6ed;
-$text: #555558;
-$gray: #4d5974;
-$lightgray: #e5e5e5;
-$blue: #2e56a6;
+@import "_variables";
 
 * {
   box-sizing: border-box;
@@ -61,12 +55,6 @@ $blue: #2e56a6;
     font-size: 20px;
     line-height: 1.4;
   }
-  //   a {
-  //     margin-bottom: 1.5em;
-  //     font-size: 16px;
-  //     text-decoration: none;
-  //     color: $bg;
-  //   }
   span {
     width: 100%;
     max-width: 200px;
@@ -78,6 +66,9 @@ $blue: #2e56a6;
     text-align: center;
     cursor: pointer;
     transition: all 0.2s ease-in-out;
+    @include mobile {
+      margin-bottom: 2em;
+    }
     &:hover {
       color: white;
       background-color: $blue;
@@ -90,10 +81,13 @@ $blue: #2e56a6;
 }
 
 .container {
+  position: relative;
+  top: 15rem;
   height: inherit;
-  padding-top: 17.5rem;
+  //   padding-top: 17.5rem;
   max-width: 40rem;
   @include mobile {
+    top: 0;
     height: 100vh;
     padding-top: 8rem;
     padding-right: 0;
