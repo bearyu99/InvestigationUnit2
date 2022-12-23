@@ -1,0 +1,17 @@
+@import "reset";
+@import "_responsive";
+@import "_variables";
+
+#info-section {
+  display: grid;
+  grid-template-columns: 30% calc(70% - 20px);
+  grid-template-rows: 125px 1fr;
+  grid-gap: 20px;
+  @include mobile {
+    display: flex;
+    flex-direction: column;
+  }
+  * {
+    z-index: 5;
+  }
+}

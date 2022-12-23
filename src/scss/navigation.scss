@@ -1,6 +1,7 @@
 @import "reset";
 @import "_btn";
 @import "_responsive";
+@import "_variables";
 
 .btn {
   @include btn(calc(100vw - 85px), 5.25px);
@@ -65,18 +66,40 @@
   }
 }
 
+#pc-nav {
+  display: flex;
+  align-items: center;
+  @include mobile {
+    display: none;
+  }
+  #user {
+    padding: 15px 16px;
+    border-radius: 50px;
+  }
+}
+
 nav {
   z-index: 10;
   position: fixed;
   top: 30px;
   left: 50px;
+  padding-bottom: 30px;
+  width: calc(100% - 100px);
+  // border-bottom: 1.5px solid $lightblue;
   @include mobile {
     display: none;
     top: 10px;
     left: 10px;
   }
+  img {
+    height: 50px;
+    margin-right: 5em;
+  }
   ul {
+    position: absolute;
+    right: 0;
     @include mobile {
+      position: inherit;
       display: none;
       opacity: 1;
       transition-duration: 1s;
@@ -93,20 +116,15 @@ nav {
     }
     li {
       float: left;
-      margin-right: 12px;
-      padding: 10px 20px;
+      padding: 15px 25px;
       border: 1px solid #c3c4ca;
-      border-radius: 50px;
-      font-size: 10pt;
-      font-weight: 500;
+      border-radius: 25px;
+      font-size: 16px;
+      font-weight: 700;
       transition: ease-in-out 0.2s;
       cursor: pointer;
-      @include mobile {
-        border: none;
-        padding: 20 35vmin;
-        margin: 0;
-        color: rgb(212, 212, 212);
-        font-size: 12pt;
+      &:not(:last-child) {
+        margin-right: 12px;
       }
       &:hover {
         background-color: #2e56a6;
@@ -118,6 +136,13 @@ nav {
         @include mobile {
           font-weight: 900;
         }
+      }
+      @include mobile {
+        border: none;
+        padding: 20 35vmin;
+        margin: 0;
+        color: rgb(212, 212, 212);
+        font-size: 12pt;
       }
     }
   }

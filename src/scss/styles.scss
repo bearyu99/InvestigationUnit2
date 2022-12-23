@@ -2,6 +2,7 @@
 @import "navigation";
 @import "home";
 @import "reserve";
+@import "info";
 @import "faq";
 @import "_mixins";
 @import "_responsive";
@@ -40,20 +41,20 @@ body {
   // background-attachment: fixed;
   // background-position: bottom;
   // background-repeat: no-repeat;
-  background-image: url("/images/Wave.svg");
-  background-size: 2500px 100vmin;
-  background-position: -580px 0;
+  // background-image: url("/images/Wave.svg");
+  // background-size: 2500px 100vmin;
+  // background-position: -580px 0;
   // background-size: contain;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  animation: background 30s infinite alternate linear;
-  @include mobile {
-    background-repeat: no-repeat;
-    animation: mbackground 30s infinite alternate linear;
-    background-size: 2500px 150vmax;
-  }
+  // animation: background 30s infinite alternate linear;
+  // @include mobile {
+  //   background-repeat: no-repeat;
+  //   animation: mbackground 30s infinite alternate linear;
+  //   background-size: 2500px 150vmax;
+  // }
 }
 
 .bg-portrait {
@@ -76,13 +77,15 @@ body {
   font-size: 20pt;
   font-weight: 700;
   line-height: 170%;
+  color: $strong;
 }
 
-.sub-content {
+.subtitle {
   width: 100%;
   line-height: 140%;
   text-align: justify;
-  margin-bottom: 2rem;
+  word-break: keep-all;
+  color: $text;
 }
 
 #home-section,
@@ -97,6 +100,7 @@ body {
 }
 
 #reserve-section,
-#info-section {
+#info-section,
+#service-section {
   padding-top: 7rem;
 }
