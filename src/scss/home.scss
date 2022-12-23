@@ -1,30 +1,238 @@
 @import "reset";
 @import "_mixins";
 @import "_responsive";
+@import "_variables";
+
+body {
+  // overflow: hidden;
+  width: 100vw;
+}
 
 #home-section {
-  display: grid;
-  grid-template-columns: 75% 25%;
-  grid-template-rows: 40% minmax(max-content, 10%) minmax(max-content, 10%) 40%;
+  padding-top: 7em;
   transition: ease-in-out 0.3s;
   @include mobile {
-    grid-template-rows: 10% 1fr 1fr;
+    padding-bottom: 10px;
   }
   * {
     z-index: 5;
   }
-  .name {
+}
+
+.banner-wrap {
+  position: relative;
+  height: 40vmin;
+  margin-bottom: 2em;
+  color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  &:hover {
+    .banner-img {
+      transform: scale(1.05);
+    }
+  }
+  @include mobile {
+    margin-bottom: 0;
+  }
+  .banner-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all ease-in-out 0.3s;
+  }
+  .banner-text {
+    position: absolute;
+    left: 2.5em;
+    bottom: 2em;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 140%;
+    li {
+      span {
+        text-decoration: underline;
+        text-underline-position: under;
+      }
+    }
+    @include mobile {
+      left: 1.7em;
+      bottom: 1.2em;
+      font-size: 14px;
+    }
+  }
+}
+
+.card-wrap {
+  display: flex;
+  align-items: flex-start;
+  height: calc(60vmin - 9em);
+  @include mobile {
+    flex-direction: column;
+    // height: 100vmax;
+  }
+  .card {
+    width: calc(100% / 4);
+    height: 100%;
+    border-radius: 25px;
+    @include mobile {
+      width: 100%;
+      height: initial;
+      // margin-right: 0 !important;
+    }
+    &:not(:last-child) {
+      margin-right: 2em;
+    }
+    &:last-child {
+    }
+    .card-title {
+      width: 100%;
+      margin-left: 1em;
+      padding: 1em 0;
+      color: $strong;
+      font-size: 21px;
+      font-weight: 900;
+      @include mobile {
+        width: initial;
+      }
+      i {
+        margin-right: 0.3em;
+      }
+    }
+    .card-content {
+      position: relative;
+      margin-bottom: 10em;
+      padding-left: 2rem;
+      padding-top: 1.5rem;
+      height: calc(100% - 6.5rem);
+      border: 2px solid #a1a2a66f;
+      border-radius: 25px;
+      background-color: white;
+      @include mobile {
+        padding-bottom: 1.5rem;
+        margin-bottom: 0;
+        height: initial;
+      }
+    }
+  }
+}
+
+.post {
+  .post-wrap {
     display: flex;
-    grid-column: span 2;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    @include mobile {
+      margin-bottom: 0;
+      &:not(:last-child) {
+        margin-bottom: 1rem;
+      }
+    }
+    .post-type {
+      padding: 5px 15px;
+      margin-right: 13px;
+      border: 1.5px solid #a1a2a66f;
+      border-radius: 25px;
+      color: $strong;
+      font-size: 14px;
+      font-weight: 700;
+    }
+  }
+}
+
+.phone {
+  position: relative;
+  .card-title {
+    &::after {
+      content: "";
+      z-index: 10;
+      position: absolute;
+      width: 85%;
+      height: 2px;
+      left: 50%;
+      top: 150px;
+      transform: translateX(-50%);
+      background-color: #a1a2a66f;
+    }
+  }
+  .phone-content {
+    p {
+      line-height: 140%;
+      &:nth-child(n + 3) {
+        text-indent: 1rem;
+      }
+      &:nth-child(2) {
+        margin-top: 2.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+      }
+    }
+  }
+  .number {
+    color: $strong;
+    font-size: 40px;
+    font-weight: 900;
+  }
+}
+
+.sponser {
+  .card-content {
+    padding: 0 !important;
+    background-image: url("https://picsum.photos/800/800/?image=192");
+    background-position: 50% 50%;
+    background-size: 120%;
+    background-repeat: no-repeat;
+    transition: all ease-in-out 0.3s;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+      background-size: 125%;
+      .sponser-text {
+        opacity: 1;
+      }
+    }
+    @include mobile {
+      min-height: 300px;
+    }
+  }
+  .sponser-wrap {
+    @include mobile {
+      padding-bottom: 10px !important;
+    }
+    .sponser-text {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 26px;
+      opacity: 0;
+      transition: all ease-in-out 0.3s;
+    }
+  }
+}
+
+.img-wrap {
+  position: absolute;
+  width: 35vmax;
+  height: 35vmax;
+  right: 0;
+  bottom: 0;
+  overflow: hidden;
+  .portrait-img {
+    position: absolute;
+    right: -19vmax;
+    bottom: 0;
+    width: 1280px;
+    height: 720px;
+  }
+  .dr-name {
+    position: absolute;
+    right: 15vmax;
+    bottom: 2em;
+    display: flex;
     flex-direction: column;
     margin-top: 7em;
-    @include mobile {
-      grid-column: 1 / -1;
-      grid-row: -2 / -1;
-      place-content: end;
-      margin: 0;
-      margin-bottom: 40px;
-    }
     span {
       font-size: 20pt;
       font-weight: 700;
@@ -36,134 +244,6 @@
         font-weight: 100;
         letter-spacing: 0px;
       }
-    }
-  }
-  .customer-group {
-    display: flex;
-    flex-direction: column;
-    grid-column-start: 2;
-    grid-row: 2 / 4;
-    justify-content: flex-end;
-    @include mobile {
-      display: none;
-    }
-    .customer-icon {
-      padding-bottom: 20px;
-      .item {
-        float: left;
-        width: 65px;
-        height: 65px;
-        margin-right: -15px;
-        background-color: #c7c7c7;
-        border: 2px solid #cccdd3;
-        border-radius: 50%;
-        object-fit: fill;
-        &:nth-child(1) {
-          @include customer(
-            5,
-            "https://thumbs.dreamstime.com/b/portrait-handsome-smiling-young-man-folded-arms-smiling-joyful-cheerful-men-crossed-hands-isolated-studio-shot-172869765.jpg"
-          );
-        }
-        &:nth-child(2) {
-          @include customer(
-            4,
-            "https://media.istockphoto.com/id/1332373959/photo/very-happy-young-man-man.jpg?b=1&s=170667a&w=0&k=20&c=oyeVqtXJ9mpGYfJ6BYHYkR9pyufVVhIonT4J1oU4sWE="
-          );
-        }
-        &:nth-child(3) {
-          @include customer(
-            3,
-            "https://img.freepik.com/free-photo/close-up-shot-pretty-woman-with-perfect-teeth-dark-clean-skin-having-rest-indoors-smiling-happily-after-received-good-positive-news_273609-1248.jpg?w=2000"
-          );
-        }
-        &:nth-child(4) {
-          @include customer(
-            2,
-            "https://media.istockphoto.com/id/685132245/photo/mature-businessman-smiling-over-white-background.jpg?s=612x612&w=0&k=20&c=OJk6U-oCZ31F3TGmarAAg2jVli8ZWTagAcF4P-kNIqA="
-          );
-        }
-      }
-    }
-    .customer-content {
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-start;
-      span {
-        &:nth-child(1) {
-          font-size: 16pt;
-          font-weight: 700;
-          padding-bottom: 0.25em;
-        }
-        &:nth-child(2) {
-          font-size: 12pt;
-        }
-      }
-    }
-  }
-  .quotation-group {
-    display: flex;
-    grid-column-start: 1;
-    grid-row: 2 / 4;
-    align-items: flex-end;
-    width: 100%;
-    height: 100%;
-    @include mobile {
-      display: none;
-    }
-    .quotation-icon {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-      top: 2em;
-      width: 65px;
-      height: 65px;
-      border-radius: 50%;
-      background-color: #2e56a6;
-      svg {
-        width: 50%;
-        height: 50%;
-        fill: white;
-      }
-    }
-  }
-  .content {
-    display: flex;
-    flex-direction: column;
-    grid-column-start: 1;
-    grid-row-start: 4;
-    justify-content: center;
-    font-size: 32pt;
-    font-weight: 900;
-    line-height: 140%;
-    @include mobile {
-      grid-column: 1 / -1;
-      grid-row: 2 / 3;
-      font-size: 19pt;
-    }
-    li {
-      @include mobile {
-        text-align: center;
-      }
-      span {
-        text-decoration: underline;
-        text-underline-position: under;
-      }
-    }
-  }
-  .logo {
-    display: flex;
-    grid-column-start: 2;
-    grid-row-start: 4;
-    align-items: center;
-    margin: 15% 0px;
-    background-color: #2e56a6;
-    @include mobile {
-      display: none;
-    }
-    img {
-      padding: 50px;
-      width: 100%;
     }
   }
 }

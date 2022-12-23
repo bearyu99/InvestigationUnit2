@@ -34,10 +34,10 @@ function sectionVisible(id) {
     if (e.id == id + "-section") {
       e.style.display = "";
       if (e.id == "home-section") {
-        bg.style.visibility = "";
-        bg.src = "/images/portrait.png";
+        // bg.style.visibility = "";
+        // bg.src = "/images/portrait.png";
       } else {
-        bg.style.visibility = "hidden";
+        // bg.style.visibility = "hidden";
       }
     }
   });
