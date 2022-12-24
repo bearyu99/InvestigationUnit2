@@ -60,7 +60,10 @@
   background-color: white;
   border: 2px solid $bordergray;
   border-radius: 30px;
-  min-height: 550px !important;
+  min-height: 550px;
+  @include mobile {
+    min-height: max-content;
+  }
 }
 
 .l-content {
