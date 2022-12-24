@@ -1,11 +1,11 @@
 @import "reset";
-@import "_responsive";
+@import "_mixins";
 @import "_variables";
 
 #reserve-section {
   display: grid;
   grid-template-columns: 30% calc(70% - 20px);
-  grid-template-rows: 125px 1fr;
+  grid-template-rows: 25vmin calc(100vmin - (25vmin + 11em));
   grid-gap: 20px;
   @include mobile {
     display: flex;
@@ -14,13 +14,53 @@
   * {
     z-index: 5;
   }
+  .banner-wrap {
+    @include banner(-280px, 0);
+    height: 25vmin;
+    min-height: 200px;
+  }
+}
+.reserve-banner-option {
+  grid-column: 1 / -1;
+}
+.banner-wrap {
+  .title {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    color: white;
+    text-shadow: #555353 1px 0 10px;
+    @include mobile {
+      top: 5em;
+      left: 0;
+      padding-left: 1rem;
+      font-size: 18px;
+    }
+  }
+  .subtitle {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    width: calc(30% - 2rem);
+    color: white;
+    text-shadow: #555353 1px 0 10px;
+    @include mobile {
+      bottom: 0;
+      left: 0;
+      width: calc(100% - 1rem);
+      padding-left: 1rem;
+      padding-bottom: 1rem;
+      font-size: 14px;
+    }
+  }
 }
 
 .l-content,
 .r-content {
-  background-color: #dadbe1a6;
-  border: 1.5px solid #c3c4ca;
+  background-color: white;
+  border: 2px solid $bordergray;
   border-radius: 30px;
+  min-height: 550px !important;
 }
 
 .l-content {
@@ -29,13 +69,11 @@
   grid-column-start: 1;
   justify-items: center;
   width: 100%;
-  height: 70vmin;
   @include mobile {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: none;
-    grid-gap: 0.5em;
-    padding: 1em;
-    height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
   }
   .info-item {
     display: flex;
@@ -43,38 +81,62 @@
     justify-content: center;
     align-items: center;
     @include mobile {
-      justify-content: flex-start;
-    }
-    i {
-      font-size: 50px;
-      color: $strong;
-      @include mobile {
-        font-size: 30px;
+      align-items: flex-start;
+      &:not(:last-child) {
+        margin-bottom: 1.5rem;
       }
     }
-    h2 {
+    &:not(:first-child) {
+      p {
+        &:nth-child(2) {
+          padding-top: 20px;
+        }
+      }
+    }
+    .title-wrap {
+      display: flex;
+      align-items: center;
       position: relative;
-      font-size: 16pt;
-      margin: 20px 0;
-      padding-bottom: 10px;
-      @include mobile {
-        font-size: 14pt;
-      }
       &::before {
         content: "";
         position: absolute;
         left: 50%;
-        top: 35px;
+        top: 70px;
         transform: translateX(-50%);
         width: 50px;
-        height: 1px;
-        background-color: black;
+        height: 2px;
+        background-color: $bordergray;
+        @include mobile {
+          top: 1.7rem;
+          left: 0;
+          transform: none;
+          width: 100%;
+        }
+      }
+      i {
+        font-size: 30px;
+        color: $strong;
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+      h2 {
+        position: relative;
+        padding: 20px 10px;
+        font-size: 30px;
+        font-weight: 700;
+        // padding-bottom: 10px;
+        @include mobile {
+          padding: 0 4px;
+          font-size: 12pt;
+        }
       }
     }
     strong {
+      padding-top: 20px;
       font-size: 18pt;
       font-weight: 700;
-      color: $text;
+      color: $lightblue;
       line-height: 140%;
       @include mobile {
         font-size: 12pt;
@@ -92,13 +154,18 @@
   grid-template-columns: 1fr 3fr;
   grid-template-rows: repeat(3, 1fr);
   grid-column-start: 2;
-  grid-gap: 4em;
-  padding: 4rem;
-  height: 70vmin;
+  grid-gap: 2rem;
+  padding: 2rem;
   @include mobile {
-    padding: 1em;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
     margin-bottom: 10px;
-    height: 100%;
+    div {
+      &:nth-child(even) {
+        margin-bottom: 2rem;
+      }
+    }
   }
   div {
     &:nth-child(even) {

@@ -3,10 +3,44 @@
 //     font-weight: $weight;
 //     color: $color;
 // }
+$mobile: 1024px;
 
-@mixin customer($index: 0, $url: none){
-    z-index: $index;
-    background-size: cover;
-    background-position: center;
-    background-image: url($url);
+@mixin customer($index: 0, $url: none) {
+  z-index: $index;
+  background-size: cover;
+  background-position: center;
+  background-image: url($url);
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin banner($top: 0, $mobile_top: 0) {
+  position: relative;
+  border-radius: 25px;
+  overflow: hidden;
+  &:hover {
+    .banner-img {
+      transform: scale(1.03);
+    }
+  }
+  .banner-img-wrap {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    .banner-img {
+      position: absolute;
+      top: $top;
+      width: 100%;
+      // height: 1080px;
+      object-fit: cover;
+      transition: all ease-in-out 0.3s;
+      @include mobile {
+        top: $mobile_top;
+      }
+    }
+  }
 }

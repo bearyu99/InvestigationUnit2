@@ -1,6 +1,6 @@
 @import "reset";
 @import "_btn";
-@import "_responsive";
+@import "_mixins";
 @import "_variables";
 
 .btn {
@@ -51,6 +51,7 @@
       @include mobile {
         display: flex;
         align-items: center;
+        width: max-content;
         height: 75px;
       }
       img {
@@ -60,8 +61,13 @@
       }
     }
     &.wide {
-      height: 400px;
+      height: 450px;
       border-radius: 0;
+    }
+    ul {
+      li {
+        margin-right: 0 !important;
+      }
     }
   }
 }

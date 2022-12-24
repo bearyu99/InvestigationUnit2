@@ -2,6 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="dist/css/styles.css" />
     <script
       src="https://kit.fontawesome.com/8f896ec8f6.js"
@@ -14,15 +15,16 @@
     <nav id="mobile-nav">
       <div class="menu-group" id="mobile-menu">
         <div class="nav-btn-group">
-          <div class="menu-logo">
+          <a class="menu-logo" href="/">
             <img src="./images/brand-logo.png" />
-          </div>
+          </a>
           <div class="menu btn">
             <div class="icon"></div>
           </div>
         </div>
         <ul id="menu" class="fade">
           <li id="home" class="select">병원소개</li>
+          <li id="convenience">시설안내</li>
           <li id="reserve">예약안내</li>
           <li id="info">진료안내</li>
           <li id="service">고객센터</li>
@@ -32,9 +34,12 @@
 
     <!-- Desktop Navigation Bar -->
     <nav id="pc-nav">
-      <img src="./images/brand-logo-blue.png" />
+      <a href="/">
+        <img src="./images/brand-logo-blue.png" />
+      </a>
       <ul id="menu">
         <li id="home" class="select">병원소개</li>
+        <li id="convenience">시설안내</li>
         <li id="reserve">예약안내</li>
         <li id="info">진료안내</li>
         <li id="service">고객센터</li>
@@ -45,10 +50,10 @@
     <!-- Main Page -->
     <section id="home-section">
       <div class="banner-wrap">
-        <img
-          class="banner-img"
-          src="https://picsum.photos/1200/350/?image=121"
-        />
+        <div class="banner-img-wrap">
+          <img class="banner-img" src="./images/hospital.png" />
+        </div>
+        <!-- src="https://picsum.photos/1200/350/?image=121" -->
         <div class="banner-text">
           <ul>
             <li>대한민국 최고의 요양 서비스로</li>
@@ -60,7 +65,7 @@
         <div class="card">
           <div>
             <p class="card-title">
-              <i class="fa-regular fa-newspaper"></i>
+              <!-- <i class="fa-regular fa-newspaper"></i> -->
               병원 소식
             </p>
           </div>
@@ -68,19 +73,27 @@
             <div class="card-content post">
               <div class="post-wrap">
                 <div class="post-type">공지</div>
-                <div class="post-title">테스트</div>
+                <a href="/">
+                  <div class="post-title">테스트</div>
+                </a>
               </div>
               <div class="post-wrap">
                 <div class="post-type">공지</div>
-                <div class="post-title">테스트</div>
+                <a href="/">
+                  <div class="post-title">테스트</div>
+                </a>
               </div>
               <div class="post-wrap">
                 <div class="post-type">공지</div>
-                <div class="post-title">테스트</div>
+                <a href="/">
+                  <div class="post-title">테스트</div>
+                </a>
               </div>
               <div class="post-wrap">
                 <div class="post-type">공지</div>
-                <div class="post-title">테스트</div>
+                <a href="/">
+                  <div class="post-title">테스트</div>
+                </a>
               </div>
             </div>
           </div>
@@ -88,7 +101,7 @@
         <div class="card">
           <div>
             <p class="card-title">
-              <i class="fa-solid fa-bullhorn"></i>
+              <!-- <i class="fa-solid fa-bullhorn"></i> -->
               주요 뉴스
             </p>
           </div>
@@ -99,13 +112,13 @@
         <div class="card phone">
           <div>
             <p class="card-title">
-              <i class="fa-solid fa-phone"></i>
-              전화번호 안내
+              <!-- <i class="fa-solid fa-phone"></i> -->
+              대표전화
             </p>
           </div>
           <div>
             <div class="card-content phone-content">
-              <p class="number">1688-0728</p>
+              <p class="number">1699-0728</p>
               <p>상담시간</p>
               <p>평일 08:00 ~ 17:00</p>
               <p>토요일 08:10 ~ 12:00</p>
@@ -114,16 +127,19 @@
         </div>
         <div class="card sponser">
           <div>
-            <p class="card-title">광고</p>
+            <p class="card-title">수상</p>
           </div>
           <div class="sponser-wrap">
             <div class="card-content">
-              <p class="sponser-text">광고입니다.</p>
+              <div class="sponser-text">
+                <p>3년 연속 우수 요양병원 지정</p>
+                <span>더 보기</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
-      <!-- <div class="img-wrap">
+      <!-- <div class="banner-img-wrap">
         <img
           class="portrait-img"
           src="https://hankookhos.site/images/lee_portrait3.png"
@@ -136,7 +152,10 @@
     </section>
     <!-- Reservation Page -->
     <section id="reserve-section" style="display: none">
-      <div class="title-box">
+      <div class="banner-wrap reserve-banner-option">
+        <div class="banner-img-wrap">
+          <img class="banner-img" src="./images/information_desk.png" />
+        </div>
         <p class="title">예약안내</p>
         <p class="subtitle">
           저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
@@ -147,21 +166,27 @@
 
       <div class="l-content">
         <div class="info-item">
-          <i class="fa-regular fa-clock"></i>
-          <h2>외래예약시간</h2>
-          <strong>1588-0728</strong>
+          <div class="title-wrap">
+            <i class="fa-regular fa-clock"></i>
+            <h2>외래예약시간</h2>
+          </div>
+          <strong>1699-0728</strong>
           <p>평일: 09:00 ~ 18:00</p>
           <p>토요일: 08:30 ~ 17:30</p>
         </div>
         <div class="info-item">
-          <i class="fa-regular fa-calendar-days"></i>
-          <h2>진료시간</h2>
+          <div class="title-wrap">
+            <i class="fa-regular fa-calendar-days"></i>
+            <h2>진료시간</h2>
+          </div>
           <p>평일: 09:00 ~ 18:30</p>
         </div>
         <div class="info-item">
-          <i class="fa-regular fa-map"></i>
-          <h2>오시는 길</h2>
-          <p>서울특별시 화려구 요양로 7-28</p>
+          <div class="title-wrap">
+            <i class="fa-regular fa-map"></i>
+            <h2>오시는 길</h2>
+          </div>
+          <p>화려시 화려구 요양로 7-28</p>
         </div>
       </div>
 
@@ -222,12 +247,15 @@
 
     <!-- Info Page -->
     <section id="info-section" style="display: none">
-      <div class="title-box">
+      <div class="banner-wrap">
+        <div class="banner-img-wrap">
+          <img class="banner-img" src="./images/doctors_office.png" />
+        </div>
         <p class="title">진료안내</p>
         <p class="subtitle">
-          끝까지 이성은 위하여서 아니다. 가진 동력은 있는 하여도 구하지
-          부패뿐이다. 충분히 보이는 없으면, 인생을 못하다 장식하는 가슴에 너의
-          말이다. 고동을 희망의 넣는 어디 인생에 너의 대중을 가는 봄바람이다.
+          저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
+          받고 있지 않습니다. 전화 혹은 저희 병원을 방문해주시면 원무과에서
+          예약을 도와드리겠습니다.
         </p>
       </div>
     </section>

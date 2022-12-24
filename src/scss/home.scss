@@ -4,7 +4,6 @@
 @import "_variables";
 
 body {
-  // overflow: hidden;
   width: 100vw;
 }
 
@@ -12,41 +11,55 @@ body {
   padding-top: 7em;
   transition: ease-in-out 0.3s;
   @include mobile {
-    padding-bottom: 10px;
   }
   * {
     z-index: 5;
   }
+  .banner-wrap {
+    @include banner(-320px, 0px);
+  }
 }
 
 .banner-wrap {
-  position: relative;
   height: 40vmin;
-  margin-bottom: 2em;
   color: white;
-  border-radius: 25px;
-  overflow: hidden;
-  &:hover {
-    .banner-img {
-      transform: scale(1.05);
-    }
-  }
-  @include mobile {
-    margin-bottom: 0;
-  }
-  .banner-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: all ease-in-out 0.3s;
-  }
+  // position: relative;
+  // height: 40vmin;
+  // margin-bottom: 2em;
+  // color: white;
+  // border-radius: 25px;
+  // overflow: hidden;
+  // &:hover {
+  //   .banner-img {
+  //     transform: scale(1.03);
+  //   }
+  // }
+  // @include mobile {
+  //   margin-bottom: 0;
+  // }
+  // .img-wrap {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 100%;
+  //   .banner-img {
+  //     position: absolute;
+  //     top: -320px;
+  //     width: 100%;
+  //     object-fit: cover;
+  //     transition: all ease-in-out 0.3s;
+  //     @include mobile {
+  //       top: 0;
+  //     }
+  //   }
+  // }
   .banner-text {
     position: absolute;
     left: 2.5em;
-    bottom: 2em;
+    bottom: 1.7em;
     font-size: 20px;
     font-weight: 700;
     line-height: 140%;
+    text-shadow: #555353 1px 0 10px;
     li {
       span {
         text-decoration: underline;
@@ -63,25 +76,31 @@ body {
 
 .card-wrap {
   display: flex;
+  flex-wrap: wrap;
   align-items: flex-start;
   height: calc(60vmin - 9em);
   @include mobile {
+    flex-wrap: nowrap;
     flex-direction: column;
-    // height: 100vmax;
   }
   .card {
-    width: calc(100% / 4);
+    min-width: calc((100% - 6em) / 4);
+    // width: calc(100% / 4);
     height: 100%;
     border-radius: 25px;
     @include mobile {
       width: 100%;
       height: initial;
+      min-width: none;
       // margin-right: 0 !important;
     }
     &:not(:last-child) {
       margin-right: 2em;
     }
     &:last-child {
+      .card-title {
+        color: $bg;
+      }
     }
     .card-title {
       width: 100%;
@@ -103,13 +122,16 @@ body {
       padding-left: 2rem;
       padding-top: 1.5rem;
       height: calc(100% - 6.5rem);
-      border: 2px solid #a1a2a66f;
+      min-width: 300px;
+      min-height: 300px;
+      border: 2px solid $bordergray;
       border-radius: 25px;
       background-color: white;
       @include mobile {
         padding-bottom: 1.5rem;
         margin-bottom: 0;
         height: initial;
+        min-height: initial;
       }
     }
   }
@@ -129,11 +151,15 @@ body {
     .post-type {
       padding: 5px 15px;
       margin-right: 13px;
-      border: 1.5px solid #a1a2a66f;
+      border: 1.5px solid $bordergray;
       border-radius: 25px;
       color: $strong;
       font-size: 14px;
       font-weight: 700;
+    }
+    a {
+      text-decoration: none;
+      color: $text;
     }
   }
 }
@@ -150,7 +176,7 @@ body {
       left: 50%;
       top: 150px;
       transform: translateX(-50%);
-      background-color: #a1a2a66f;
+      background-color: $bordergray;
     }
   }
   .phone-content {
@@ -167,7 +193,7 @@ body {
     }
   }
   .number {
-    color: $strong;
+    color: $lightblue;
     font-size: 40px;
     font-weight: 900;
   }
@@ -176,21 +202,24 @@ body {
 .sponser {
   .card-content {
     padding: 0 !important;
-    background-image: url("https://picsum.photos/800/800/?image=192");
+    background-image: url("/images/premier.png");
     background-position: 50% 50%;
-    background-size: 120%;
+    background-size: 100%;
     background-repeat: no-repeat;
     transition: all ease-in-out 0.3s;
     overflow: hidden;
-    cursor: pointer;
     &:hover {
-      background-size: 125%;
+      background-size: 105%;
       .sponser-text {
         opacity: 1;
       }
     }
     @include mobile {
-      min-height: 300px;
+      height: 100vw !important;
+      background-size: 110%;
+      &:hover {
+        background-size: 115%;
+      }
     }
   }
   .sponser-wrap {
@@ -199,51 +228,58 @@ body {
     }
     .sponser-text {
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       width: 100%;
       height: 100%;
       background-color: rgba(0, 0, 0, 0.6);
       color: white;
-      font-size: 26px;
+      font-size: 18px;
       opacity: 0;
       transition: all ease-in-out 0.3s;
-    }
-  }
-}
-
-.img-wrap {
-  position: absolute;
-  width: 35vmax;
-  height: 35vmax;
-  right: 0;
-  bottom: 0;
-  overflow: hidden;
-  .portrait-img {
-    position: absolute;
-    right: -19vmax;
-    bottom: 0;
-    width: 1280px;
-    height: 720px;
-  }
-  .dr-name {
-    position: absolute;
-    right: 15vmax;
-    bottom: 2em;
-    display: flex;
-    flex-direction: column;
-    margin-top: 7em;
-    span {
-      font-size: 20pt;
-      font-weight: 700;
-      letter-spacing: 5px;
-      line-height: 170%;
-      &:nth-child(2) {
-        color: gray;
-        font-size: 8pt;
-        font-weight: 100;
-        letter-spacing: 0px;
+      span {
+        padding: 10px 0;
+        text-decoration: underline;
+        text-underline-position: under;
+        cursor: pointer;
       }
     }
   }
 }
+
+// .img-wrap {
+//   position: absolute;
+//   width: 35vmax;
+//   height: 35vmax;
+//   right: 0;
+//   bottom: 0;
+//   overflow: hidden;
+//   .portrait-img {
+//     position: absolute;
+//     right: -19vmax;
+//     bottom: 0;
+//     width: 1280px;
+//     height: 720px;
+//   }
+//   .dr-name {
+//     position: absolute;
+//     right: 15vmax;
+//     bottom: 2em;
+//     display: flex;
+//     flex-direction: column;
+//     margin-top: 7em;
+//     span {
+//       font-size: 20pt;
+//       font-weight: 700;
+//       letter-spacing: 5px;
+//       line-height: 170%;
+//       &:nth-child(2) {
+//         color: gray;
+//         font-size: 8pt;
+//         font-weight: 100;
+//         letter-spacing: 0px;
+//       }
+//     }
+//   }
+// }
