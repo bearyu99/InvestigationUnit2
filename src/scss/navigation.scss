@@ -4,7 +4,7 @@
 @import "_variables";
 
 .btn {
-  @include btn(calc(100vw - 85px), 5.25px);
+  @include btn(calc(100vmin - 85px), 15.25px);
   .icon {
     @include icon(4px, 30px);
     &:before {
@@ -33,16 +33,23 @@
 #mobile-nav {
   z-index: 10;
   display: none;
-  width: calc(100% - 10px);
+  width: 100vw;
+  padding: 10px 10px;
+  background-color: $bg;
+  border-end-start-radius: 50px;
+  border-end-end-radius: 50px;
   @include mobile {
     display: inline;
   }
   .menu-group {
     transition: 0.5s;
+    &.wide {
+      height: 450px;
+      border-radius: 37px;
+    }
     @include mobile {
       display: grid;
       grid-template-rows: 1fr 5fr;
-      width: calc(100% - 10px);
       height: 75px;
       border-radius: 50px;
       background-color: #2e56a6;
@@ -60,10 +67,6 @@
         object-fit: scale-down;
       }
     }
-    &.wide {
-      height: 450px;
-      border-radius: 0;
-    }
     ul {
       li {
         margin-right: 0 !important;
@@ -75,6 +78,10 @@
 #pc-nav {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100vmax;
+  padding: 30px 50px;
+  background-color: $bg;
   @include mobile {
     display: none;
   }
@@ -87,23 +94,22 @@
 nav {
   z-index: 10;
   position: fixed;
-  top: 30px;
-  left: 50px;
+  // top: 30px;
+  // left: 50px;
   padding-bottom: 30px;
-  width: calc(100% - 100px);
-  // border-bottom: 1.5px solid $lightblue;
+  width: calc(100vmax - 100px);
   @include mobile {
     display: none;
-    top: 10px;
-    left: 10px;
+    top: 0;
+    left: 0;
   }
   img {
     height: 50px;
     margin-right: 5em;
   }
   ul {
-    position: absolute;
-    right: 0;
+    // position: absolute;
+    // right: 0;
     @include mobile {
       position: inherit;
       display: none;

@@ -15,26 +15,9 @@
   font-style: normal;
 }
 
-html,
 body {
-  // height: 100%;
-}
-
-@keyframes background {
-  100% {
-    background-size: 6000px 100vmin;
-  }
-}
-
-@keyframes mbackground {
-  100% {
-    background-size: 6000px 150vmax;
-  }
-}
-
-body {
-  width: 100%;
-  height: 100vh;
+  // width: 100vmin;
+  // height: 100vh;
   font-family: "IBMPlexSansKR-Regular";
   background-color: #e5e6ed;
   // background-image: url("https://hankookhos.site/images/lee_portrait.png");

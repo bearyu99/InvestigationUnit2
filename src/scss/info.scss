@@ -7,7 +7,7 @@
     z-index: 5;
   }
   .banner-wrap {
-    @include banner(-320px, 0);
+    @include banner(0, 0);
     height: 25vmin;
     min-height: 200px;
   }

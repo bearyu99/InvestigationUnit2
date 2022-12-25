@@ -3,55 +3,21 @@
 @import "_responsive";
 @import "_variables";
 
-body {
-  width: 100vw;
-}
-
 #home-section {
   padding-top: 7em;
   transition: ease-in-out 0.3s;
-  @include mobile {
-  }
   * {
     z-index: 5;
   }
   .banner-wrap {
-    @include banner(-320px, 0px);
+    @include banner(0, 0px);
   }
 }
 
 .banner-wrap {
-  height: 40vmin;
+  height: 37vmin;
   color: white;
-  // position: relative;
-  // height: 40vmin;
-  // margin-bottom: 2em;
-  // color: white;
-  // border-radius: 25px;
-  // overflow: hidden;
-  // &:hover {
-  //   .banner-img {
-  //     transform: scale(1.03);
-  //   }
-  // }
-  // @include mobile {
-  //   margin-bottom: 0;
-  // }
-  // .img-wrap {
-  //   position: relative;
-  //   width: 100%;
-  //   height: 100%;
-  //   .banner-img {
-  //     position: absolute;
-  //     top: -320px;
-  //     width: 100%;
-  //     object-fit: cover;
-  //     transition: all ease-in-out 0.3s;
-  //     @include mobile {
-  //       top: 0;
-  //     }
-  //   }
-  // }
+  margin-bottom: 1em;
   .banner-text {
     position: absolute;
     left: 2.5em;
@@ -77,61 +43,46 @@ body {
 .card-wrap {
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
-  height: calc(60vmin - 9em);
+  gap: 2em;
   @include mobile {
-    flex-wrap: nowrap;
     flex-direction: column;
+    gap: 0;
   }
   .card {
+    display: flex;
+    flex-direction: column;
     min-width: calc((100% - 6em) / 4);
-    // width: calc(100% / 4);
-    height: 100%;
     border-radius: 25px;
-    @include mobile {
-      width: 100%;
-      height: initial;
-      min-width: none;
-      // margin-right: 0 !important;
-    }
-    &:not(:last-child) {
-      margin-right: 2em;
-    }
     &:last-child {
       .card-title {
         color: $bg;
       }
     }
     .card-title {
-      width: 100%;
       margin-left: 1em;
-      padding: 1em 0;
+      padding-top: 1em;
+      padding-bottom: 1em;
       color: $strong;
       font-size: 21px;
       font-weight: 900;
-      @include mobile {
-        width: initial;
-      }
       i {
         margin-right: 0.3em;
       }
     }
     .card-content {
       position: relative;
-      margin-bottom: 10em;
       padding-left: 2rem;
       padding-top: 1.5rem;
-      height: calc(100% - 6.5rem);
-      min-width: 300px;
-      min-height: 300px;
+      aspect-ratio: 1 / 1;
+      min-width: 250px;
       border: 2px solid $bordergray;
       border-radius: 25px;
       background-color: white;
       @include mobile {
-        padding-bottom: 1.5rem;
         margin-bottom: 0;
-        height: initial;
-        min-height: initial;
+        padding-bottom: 1.5rem;
+        aspect-ratio: auto;
+        min-width: unset;
       }
     }
   }
@@ -167,17 +118,6 @@ body {
 .phone {
   position: relative;
   .card-title {
-    &::after {
-      content: "";
-      z-index: 10;
-      position: absolute;
-      width: 85%;
-      height: 2px;
-      left: 50%;
-      top: 150px;
-      transform: translateX(-50%);
-      background-color: $bordergray;
-    }
   }
   .phone-content {
     p {
@@ -196,6 +136,17 @@ body {
     color: $lightblue;
     font-size: 40px;
     font-weight: 900;
+    &::before {
+      content: "";
+      z-index: 15 !important;
+      position: absolute;
+      width: 85%;
+      height: 2px;
+      left: 50%;
+      top: 100px;
+      transform: translateX(-50%);
+      background-color: $bordergray;
+    }
   }
 }
 
