@@ -3,8 +3,38 @@ const img = "https://hankookhos.site/images/lee_portrait.png";
 const ham = document.querySelector(".menu");
 const bg = document.querySelector(".bg-portrait > img");
 const nav = document.querySelector(".nav-btn-group");
+const map = document.getElementById("map");
 let menuWide = false;
 
+// Map Panzoom
+const panzoom = Panzoom(map, {
+  maxScale: 7,
+  minScale: 1.2,
+  startScale: 3,
+  animate: true,
+  cursor: "grab",
+  contain: "outside",
+});
+map.parentElement.addEventListener("wheel", panzoom.zoomWithWheel);
+
+// Modal Popup
+function popOpen() {
+  var modalPop = document.querySelector(".modal-wrap");
+  var modalBg = document.querySelector(".modal-bg");
+
+  modalPop.style.display = "initial";
+  modalBg.style.display = "initial";
+}
+
+function popClose() {
+  var modalPop = document.querySelector(".modal-wrap");
+  var modalBg = document.querySelector(".modal-bg");
+
+  modalPop.style.display = "none";
+  modalBg.style.display = "none";
+}
+
+// Nav Bar
 function toggleMenu() {
   ham.classList.toggle("open");
   document.querySelector(".menu-group").classList.toggle("wide");
