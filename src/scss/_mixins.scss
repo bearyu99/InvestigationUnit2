@@ -18,7 +18,7 @@ $mobile: 1024px;
   }
 }
 
-@mixin banner($top: 0, $mobile_top: 0) {
+@mixin banner {
   position: relative;
   border-radius: 25px;
   overflow: hidden;
@@ -33,15 +33,62 @@ $mobile: 1024px;
     height: 100%;
     .banner-img {
       position: absolute;
-      top: $top;
+      top: 50%;
+      transform: translateY(-50%);
       width: 100%;
-      height: 100%;
-      // height: 1080px;
       object-fit: cover;
       transition: all ease-in-out 0.3s;
-      @include mobile {
-        top: $mobile_top;
-      }
     }
+  }
+}
+
+@mixin banner-content-wrap {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30%;
+  height: 100%;
+  padding: 2rem;
+  left: 0;
+  bottom: 0;
+  @include mobile {
+    // left: 1rem;
+    // bottom: 1rem;
+    padding: 1rem;
+    justify-content: flex-end;
+    width: calc(100% - 2rem);
+  }
+}
+
+@mixin banner_title {
+  // position: absolute;
+  // top: 2rem;
+  // left: 2rem;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-shadow: #555353 1px 0 10px;
+  @include mobile {
+    // top: 5em;
+    // left: 0;
+    // padding-left: 1rem;
+    font-size: 18px;
+  }
+}
+
+@mixin banner_subtitle {
+  // position: absolute;
+  // bottom: 2rem;
+  // left: 2rem;
+  // width: calc(30% - 2rem);
+  color: white;
+  text-shadow: #555353 1px 0 10px;
+  @include mobile {
+    // bottom: 0;
+    // left: 0;
+    // width: calc(100% - 1rem);
+    // padding-left: 1rem;
+    // padding-bottom: 1rem;
+    font-size: 14px;
   }
 }
