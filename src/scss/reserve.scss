@@ -3,10 +3,13 @@
 @import "_variables";
 
 #reserve-section {
-  display: grid;
-  grid-template-columns: 30% calc(70% - 20px);
-  grid-template-rows: 25vmin calc(100vmin - (25vmin + 11em));
-  grid-gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  // display: grid;
+  // grid-template-columns: 30% calc(70% - 20px);
+  // grid-template-rows: 25vmin calc(100vmin - (25vmin + 11em));
+  // grid-gap: 20px;
   @include mobile {
     display: flex;
     flex-direction: column;
@@ -15,43 +18,36 @@
     z-index: 5;
   }
   .banner-wrap {
-    @include banner(0, 0);
+    position: relative;
     height: 25vmin;
     min-height: 200px;
+    @include banner;
+    @include mobile {
+      // min-height: 150px;
+    }
+    .banner-content-wrap {
+      @include banner-content-wrap;
+      .title {
+        @include banner_title;
+      }
+      .subtitle {
+        @include banner_subtitle;
+      }
+    }
   }
 }
+
 .reserve-banner-option {
-  grid-column: 1 / -1;
+  margin-bottom: 0;
 }
-.banner-wrap {
-  .title {
-    position: absolute;
-    top: 2rem;
-    left: 2rem;
-    color: white;
-    text-shadow: #555353 1px 0 10px;
-    @include mobile {
-      top: 5em;
-      left: 0;
-      padding-left: 1rem;
-      font-size: 18px;
-    }
-  }
-  .subtitle {
-    position: absolute;
-    bottom: 2rem;
-    left: 2rem;
-    width: calc(30% - 2rem);
-    color: white;
-    text-shadow: #555353 1px 0 10px;
-    @include mobile {
-      bottom: 0;
-      left: 0;
-      width: calc(100% - 1rem);
-      padding-left: 1rem;
-      padding-bottom: 1rem;
-      font-size: 14px;
-    }
+
+.reserve-content-wrap {
+  display: flex;
+  height: 60vmin;
+  min-height: 600px;
+  gap: 1rem;
+  @include mobile {
+    flex-direction: column;
   }
 }
 
@@ -60,9 +56,9 @@
   background-color: white;
   border: 2px solid $bordergray;
   border-radius: 30px;
-  min-height: 550px;
   @include mobile {
     min-height: max-content;
+    margin-bottom: 0;
   }
 }
 
@@ -71,11 +67,13 @@
   grid-template-rows: repeat(3, 1fr);
   grid-column-start: 1;
   justify-items: center;
-  width: 100%;
+  width: 35vmax;
+  min-width: 250px;
   @include mobile {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    width: 100%;
     padding: 1.5rem;
   }
   .info-item {
@@ -113,7 +111,7 @@
           top: 1.7rem;
           left: 0;
           transform: none;
-          width: 100%;
+          width: 82vmin;
         }
       }
       i {
@@ -148,6 +146,25 @@
     p {
       font-size: 10pt;
       line-height: 120%;
+    }
+  }
+  .map-btn {
+    margin: 1rem 0;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    color: $strong;
+    background-color: $bg;
+    transition: all ease-in-out 0.3s;
+    cursor: pointer;
+    @include mobile {
+      margin-top: 1rem;
+      margin-bottom: 0;
+    }
+    &:hover {
+      color: white;
+      background-color: $lightblue;
     }
   }
 }
