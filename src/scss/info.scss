@@ -7,8 +7,21 @@
     z-index: 5;
   }
   .banner-wrap {
-    @include banner(0, 0);
+    position: relative;
     height: 25vmin;
     min-height: 200px;
+    @include banner;
+    @include mobile {
+      // min-height: 150px;
+    }
+    .banner-content-wrap {
+      @include banner-content-wrap;
+      .title {
+        @include banner_title;
+      }
+      .subtitle {
+        @include banner_subtitle;
+      }
+    }
   }
 }

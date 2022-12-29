@@ -10,7 +10,7 @@
     z-index: 5;
   }
   .banner-wrap {
-    @include banner(0, 0px);
+    @include banner;
   }
 }
 
@@ -18,6 +18,9 @@
   height: 37vmin;
   color: white;
   margin-bottom: 1em;
+  @include mobile {
+    margin-bottom: 0;
+  }
   .banner-text {
     position: absolute;
     left: 2.5em;
