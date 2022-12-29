@@ -8,6 +8,7 @@
       src="https://kit.fontawesome.com/8f896ec8f6.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
     <title>한국요양병원</title>
   </head>
   <body>
@@ -24,9 +25,9 @@
         </div>
         <ul id="menu" class="fade">
           <li id="home" class="select">병원소개</li>
-          <li id="convenience">시설안내</li>
           <li id="reserve">예약안내</li>
           <li id="info">진료안내</li>
+          <li id="convenience">시설안내</li>
           <li id="service">고객센터</li>
         </ul>
       </div>
@@ -39,9 +40,9 @@
       </a>
       <ul id="menu">
         <li id="home" class="select">병원소개</li>
-        <li id="convenience">시설안내</li>
         <li id="reserve">예약안내</li>
         <li id="info">진료안내</li>
+        <li id="convenience">시설안내</li>
         <li id="service">고객센터</li>
         <li id="user"><i class="fa-solid fa-user"></i></li>
       </ul>
@@ -156,91 +157,102 @@
         <div class="banner-img-wrap">
           <img class="banner-img" src="./images/information_desk.png" />
         </div>
-        <p class="title">예약안내</p>
-        <p class="subtitle">
-          저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
-          받고 있지 않습니다. 전화 혹은 저희 병원을 방문해주시면 원무과에서
-          예약을 도와드리겠습니다.
-        </p>
-      </div>
-
-      <div class="l-content">
-        <div class="info-item">
-          <div class="title-wrap">
-            <i class="fa-regular fa-clock"></i>
-            <h2>외래예약시간</h2>
-          </div>
-          <strong>1699-0728</strong>
-          <p>평일: 09:00 ~ 18:00</p>
-          <p>토요일: 08:30 ~ 17:30</p>
-        </div>
-        <div class="info-item">
-          <div class="title-wrap">
-            <i class="fa-regular fa-calendar-days"></i>
-            <h2>진료시간</h2>
-          </div>
-          <p>평일: 09:00 ~ 18:30</p>
-        </div>
-        <div class="info-item">
-          <div class="title-wrap">
-            <i class="fa-regular fa-map"></i>
-            <h2>오시는 길</h2>
-          </div>
-          <p>화려시 화려구 요양로 7-28</p>
-        </div>
-      </div>
-
-      <div class="r-content">
-        <div>
-          <p class="r-title">방문예약</p>
-          <p class="r-subtitle">VISIT RESERVATION</p>
-        </div>
-        <div>
-          <ul>
-            <li><span>01.</span> 원무과 수납창구 방문</li>
-            <li><span>02.</span> 진료신청</li>
-            <li><span>03.</span> 진료예약</li>
-            <li><span>04.</span> 예약일에 진료과 방문</li>
-          </ul>
-          <p class="strong">
-            평일: 09:00 ~ 18:00 / 토요일: 08:30 ~ 17:30 예약 가능
+        <div class="banner-content-wrap">
+          <p class="title">예약안내</p>
+          <p class="subtitle">
+            저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
+            받고 있지 않습니다. 전화 혹은 저희 병원을 방문해주시면 원무과에서
+            예약을 도와드리겠습니다.
           </p>
         </div>
-        <div>
-          <p class="r-title">유선예약</p>
-          <p class="r-subtitle">TELEPHONE RESERVATION</p>
+      </div>
+      <div class="reserve-content-wrap">
+        <div class="l-content">
+          <div class="info-item">
+            <div class="title-wrap">
+              <i class="fa-regular fa-clock"></i>
+              <h2>외래예약시간</h2>
+            </div>
+            <strong>1699-0728</strong>
+            <p>평일: 09:00 ~ 18:00</p>
+            <p>토요일: 08:30 ~ 17:30</p>
+          </div>
+          <div class="info-item">
+            <div class="title-wrap">
+              <i class="fa-regular fa-calendar-days"></i>
+              <h2>진료시간</h2>
+            </div>
+            <p>평일: 09:00 ~ 18:30</p>
+          </div>
+          <div class="info-item">
+            <div class="title-wrap">
+              <i class="fa-regular fa-map"></i>
+              <h2>오시는 길</h2>
+            </div>
+            <p>화려시 화려구 요양로 7-28</p>
+            <p class="map-btn" onclick="popOpen()">지도보기</p>
+          </div>
         </div>
-        <div>
-          <ul>
-            <li><span>01.</span> 전화신청</li>
-            <li><span>02.</span> 원무과 상담연결</li>
-            <li><span>03.</span> 진료상담 후 예약</li>
-            <li><span>04.</span> 예약일에 진료과 방문</li>
-          </ul>
-          <p class="strong">
-            평일: 09:00 ~ 18:00 / 토요일: 08:30 ~ 17:30 예약 가능
-          </p>
+        <div class="r-content">
+          <div>
+            <p class="r-title">방문예약</p>
+            <p class="r-subtitle">VISIT RESERVATION</p>
+          </div>
+          <div>
+            <ul>
+              <li><span>01.</span> 원무과 수납창구 방문</li>
+              <li><span>02.</span> 진료신청</li>
+              <li><span>03.</span> 진료예약</li>
+              <li><span>04.</span> 예약일에 진료과 방문</li>
+            </ul>
+            <p class="strong">
+              평일: 09:00 ~ 18:00 / 토요일: 08:30 ~ 17:30 예약 가능
+            </p>
+          </div>
+          <div>
+            <p class="r-title">유선예약</p>
+            <p class="r-subtitle">TELEPHONE RESERVATION</p>
+          </div>
+          <div>
+            <ul>
+              <li><span>01.</span> 전화신청</li>
+              <li><span>02.</span> 원무과 상담연결</li>
+              <li><span>03.</span> 진료상담 후 예약</li>
+              <li><span>04.</span> 예약일에 진료과 방문</li>
+            </ul>
+            <p class="strong">
+              평일: 09:00 ~ 18:00 / 토요일: 08:30 ~ 17:30 예약 가능
+            </p>
+          </div>
+          <div>
+            <p class="r-title">외래환자 정보안내</p>
+            <p class="r-subtitle">Outpatient Information</p>
+          </div>
+          <div>
+            <ul>
+              <li>
+                <span>01.</span> 한국요양병원은 초진일 경우 타 병원 또는
+                의원에서 발급한 소견서, 진료의뢰서 및 진단서를 제출하시면 보다
+                정확한 진단을 받으실 수 있습니다.
+              </li>
+              <li>
+                <span>02.</span> 환자유형에 따른 보험적용 여부 및 진료비에 관한
+                상담은 원무과에서 받으실 수 있습니다.
+              </li>
+              <li>
+                <span>03.</span> 비급여항목에 대한 내용은 원무과에 비치되어
+                있으며 원무과에서 설명 받으실 수 있습니다.
+              </li>
+            </ul>
+          </div>
         </div>
-        <div>
-          <p class="r-title">외래환자 정보안내</p>
-          <p class="r-subtitle">Outpatient Information</p>
-        </div>
-        <div>
-          <ul>
-            <li>
-              <span>01.</span> 한국요양병원은 초진일 경우 타 병원 또는 의원에서
-              발급한 소견서, 진료의뢰서 및 진단서를 제출하시면 보다 정확한
-              진단을 받으실 수 있습니다.
-            </li>
-            <li>
-              <span>02.</span> 환자유형에 따른 보험적용 여부 및 진료비에 관한
-              상담은 원무과에서 받으실 수 있습니다.
-            </li>
-            <li>
-              <span>03.</span> 비급여항목에 대한 내용은 원무과에 비치되어 있으며
-              원무과에서 설명 받으실 수 있습니다.
-            </li>
-          </ul>
+      </div>
+
+      <!-- Modal Popup -->
+      <div class="modal-bg" onClick="javascript:popClose();"></div>
+      <div class="modal-wrap">
+        <div id="map">
+          <img src="https://hankookhos.site/images/map.svg" />
         </div>
       </div>
     </section>
@@ -251,12 +263,14 @@
         <div class="banner-img-wrap">
           <img class="banner-img" src="./images/doctors_office.png" />
         </div>
-        <p class="title">진료안내</p>
-        <p class="subtitle">
-          저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
-          받고 있지 않습니다. 전화 혹은 저희 병원을 방문해주시면 원무과에서
-          예약을 도와드리겠습니다.
-        </p>
+        <div class="banner-content-wrap">
+          <p class="title">진료안내</p>
+          <p class="subtitle">
+            저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
+            받고 있지 않습니다. 전화 혹은 저희 병원을 방문해주시면 원무과에서
+            예약을 도와드리겠습니다.
+          </p>
+        </div>
       </div>
     </section>
 
