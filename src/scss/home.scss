@@ -4,41 +4,39 @@
 @import "_variables";
 
 #home-section {
-  padding-top: 7em;
   transition: ease-in-out 0.3s;
   * {
     z-index: 5;
   }
   .banner-wrap {
+    height: 35vmin;
+    color: white;
     @include banner;
-  }
-}
-
-.banner-wrap {
-  height: 37vmin;
-  color: white;
-  margin-bottom: 1em;
-  @include mobile {
-    margin-bottom: 0;
-  }
-  .banner-text {
-    position: absolute;
-    left: 2.5em;
-    bottom: 1.7em;
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 140%;
-    text-shadow: #555353 1px 0 10px;
-    li {
-      span {
-        text-decoration: underline;
-        text-underline-position: under;
-      }
-    }
     @include mobile {
-      left: 1.7em;
-      bottom: 1.2em;
-      font-size: 14px;
+      margin-bottom: 0;
+    }
+    .banner-img {
+      top: 40% !important;
+    }
+    .banner-text {
+      position: absolute;
+      left: 2.5em;
+      bottom: 1.7em;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 140%;
+      text-shadow: #555353 1px 0 10px;
+      li {
+        span {
+          text-decoration: underline;
+          text-underline-position: under;
+        }
+      }
+      @include mobile {
+        left: 1.7em;
+        bottom: 1.2em;
+        font-size: 14px;
+      }
     }
   }
 }
@@ -46,16 +44,22 @@
 .card-wrap {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
+  height: 55vmin;
+  padding-top: 1rem;
   gap: 2em;
   @include mobile {
-    flex-direction: column;
-    gap: 0;
+    display: block;
+    padding-top: 0;
   }
   .card {
     display: flex;
     flex-direction: column;
-    min-width: calc((100% - 6em) / 4);
+    width: max(calc((100% - 6em) / 4), 300px);
     border-radius: 25px;
+    @include mobile {
+      width: 100%;
+    }
     &:last-child {
       .card-title {
         color: $bg;
@@ -74,16 +78,16 @@
     }
     .card-content {
       position: relative;
-      padding-left: 2rem;
-      padding-top: 1.5rem;
+      padding: 1.5rem 2rem;
       aspect-ratio: 1 / 1;
-      min-width: 250px;
+      // min-width: 250px;
       border: 2px solid $bordergray;
       border-radius: 25px;
       background-color: white;
+      overflow: hidden;
       @include mobile {
         margin-bottom: 0;
-        padding-bottom: 1.5rem;
+        padding: 1.5rem;
         aspect-ratio: auto;
         min-width: unset;
       }
@@ -110,11 +114,25 @@
       color: $strong;
       font-size: 14px;
       font-weight: 700;
+      white-space: nowrap;
+    }
+    .post-title {
+      width: calc((100vw / 4) - 12rem);
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      @include mobile {
+        width: calc(100vw - 10rem);
+      }
     }
     a {
       text-decoration: none;
       color: $text;
     }
+  }
+  .notice {
+    border-color: $blue !important;
+    color: $blue !important;
   }
 }
 
@@ -158,12 +176,12 @@
     padding: 0 !important;
     background-image: url("/images/premier.png");
     background-position: 50% 50%;
-    background-size: 100%;
+    background-size: 105%;
     background-repeat: no-repeat;
     transition: all ease-in-out 0.3s;
     overflow: hidden;
     &:hover {
-      background-size: 105%;
+      background-size: 110%;
       .sponser-text {
         opacity: 1;
       }
