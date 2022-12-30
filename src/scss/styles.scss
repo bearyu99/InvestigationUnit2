@@ -3,9 +3,9 @@
 @import "home";
 @import "reserve";
 @import "info";
+@import "convenience";
 @import "faq";
 @import "_mixins";
-@import "_responsive";
 
 @font-face {
   font-family: "IBMPlexSansKR-Regular";
@@ -110,6 +110,7 @@ body {
 #home-section,
 #reserve-section,
 #info-section,
+#convenience-section,
 #service-section {
   margin: 0px 50px;
   // height: 100%;
@@ -118,11 +119,13 @@ body {
   }
 }
 
+#home-section,
 #reserve-section,
 #info-section,
+#convenience-section,
 #service-section {
-  padding-top: 7rem;
+  padding-top: 10vmin;
   @include mobile {
-    padding-top: 6rem;
+    padding-top: 105px;
   }
 }
