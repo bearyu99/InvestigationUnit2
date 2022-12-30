@@ -9,6 +9,11 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
+    <!-- <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/cheerio/1.0.0-rc.12/lib/cheerio.min.js"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script> -->
     <title>한국요양병원</title>
   </head>
   <body>
@@ -52,7 +57,7 @@
     <section id="home-section">
       <div class="banner-wrap">
         <div class="banner-img-wrap">
-          <img class="banner-img" src="./images/hospital.png" />
+          <img class="banner-img" src="./images/screenshot/main_building.png" />
         </div>
         <!-- src="https://picsum.photos/1200/350/?image=121" -->
         <div class="banner-text">
@@ -73,27 +78,50 @@
           <!-- <div> -->
           <div class="card-content post">
             <div class="post-wrap">
-              <div class="post-type">공지</div>
-              <a href="/">
-                <div class="post-title">테스트</div>
+              <div class="post-type notice">공지</div>
+              <a
+                href="https://reserve.hankookhos.site/?page_id=10&uid=11&mod=document&pageid=1"
+              >
+                <p class="post-title">한국요양병원 진료 시간 및 문의 안내</p>
               </a>
             </div>
             <div class="post-wrap">
-              <div class="post-type">공지</div>
-              <a href="/">
-                <div class="post-title">테스트</div>
+              <div class="post-type notice">공지</div>
+              <a
+                href="https://reserve.hankookhos.site/?page_id=10&uid=10&mod=document&pageid=1"
+              >
+                <p class="post-title">
+                  코로나19 원내 확산 방지를 위한 병원 출입 유의 사항 안내
+                </p>
               </a>
             </div>
             <div class="post-wrap">
-              <div class="post-type">공지</div>
-              <a href="/">
-                <div class="post-title">테스트</div>
+              <div class="post-type">강연</div>
+              <a
+                href="https://reserve.hankookhos.site/?page_id=10&uid=12&mod=document&pageid=1"
+              >
+                <p class="post-title">2022 우울증 퇴치 운동 강연</p>
               </a>
             </div>
             <div class="post-wrap">
-              <div class="post-type">공지</div>
-              <a href="/">
-                <div class="post-title">테스트</div>
+              <div class="post-type">안내</div>
+              <a
+                href="https://reserve.hankookhos.site/?page_id=10&uid=14&mod=document&pageid=1"
+              >
+                <p class="post-title">
+                  「2022년 요양병원 운영평가」 만족도 설문조사를 위한 개인정보
+                  제3자 제공 안내
+                </p>
+              </a>
+            </div>
+            <div class="post-wrap">
+              <div class="post-type">안내</div>
+              <a
+                href="https://reserve.hankookhos.site/?page_id=10&uid=13&mod=document&pageid=1"
+              >
+                <p class="post-title">
+                  한국요양병원 1급 전문 요양 보호사 인증 획득
+                </p>
               </a>
             </div>
           </div>
@@ -155,7 +183,10 @@
     <section id="reserve-section" style="display: none">
       <div class="banner-wrap reserve-banner-option">
         <div class="banner-img-wrap">
-          <img class="banner-img" src="./images/information_desk.png" />
+          <img
+            class="banner-img"
+            src="./images/screenshot/information_desk_1.png"
+          />
         </div>
         <div class="banner-content-wrap">
           <p class="title">예약안내</p>
@@ -261,10 +292,30 @@
     <section id="info-section" style="display: none">
       <div class="banner-wrap">
         <div class="banner-img-wrap">
-          <img class="banner-img" src="./images/doctors_office.png" />
+          <img
+            class="banner-img"
+            src="./images/screenshot/doctors_office.png"
+          />
         </div>
         <div class="banner-content-wrap">
           <p class="title">진료안내</p>
+          <p class="subtitle">
+            저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
+            받고 있지 않습니다. 전화 혹은 저희 병원을 방문해주시면 원무과에서
+            예약을 도와드리겠습니다.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Convenience Page -->
+    <section id="convenience-section" style="display: none">
+      <div class="banner-wrap">
+        <div class="banner-img-wrap">
+          <img class="banner-img" src="./images/screenshot/cafe.png" />
+        </div>
+        <div class="banner-content-wrap convenience-banneer-option">
+          <p class="title">시설안내</p>
           <p class="subtitle">
             저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
             받고 있지 않습니다. 전화 혹은 저희 병원을 방문해주시면 원무과에서
@@ -373,7 +424,7 @@
         <p class="faq-btn">더 보기</p>
       </div>
       <div class="r-container">
-        <img src="https://hankookhos.site/images/lee_portrait2.png" />
+        <!-- <img src="https://hankookhos.site/images/lee_portrait2.png" /> -->
         <!-- <img src="https://picsum.photos/400/400/?image=15" /> -->
       </div>
       <!-- </div> -->
