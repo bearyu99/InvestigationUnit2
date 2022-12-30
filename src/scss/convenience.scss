@@ -2,7 +2,7 @@
 @import "_mixins";
 @import "_variables";
 
-#info-section {
+#convenience-section {
   * {
     z-index: 5;
   }
@@ -23,4 +23,9 @@
       }
     }
   }
+}
+
+.convenience-banner-option {
+  margin-bottom: 0;
+  //   height: ;
 }

@@ -6,10 +6,6 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  // display: grid;
-  // grid-template-columns: 30% calc(70% - 20px);
-  // grid-template-rows: 25vmin calc(100vmin - (25vmin + 11em));
-  // grid-gap: 20px;
   @include mobile {
     display: flex;
     flex-direction: column;
@@ -19,11 +15,13 @@
   }
   .banner-wrap {
     position: relative;
-    height: 25vmin;
-    min-height: 200px;
+    height: max(20vmin, 200px);
     @include banner;
-    @include mobile {
-      // min-height: 150px;
+    .banner-img {
+      top: 70% !important;
+      @include mobile {
+        top: 50% !important;
+      }
     }
     .banner-content-wrap {
       @include banner-content-wrap;
@@ -43,7 +41,7 @@
 
 .reserve-content-wrap {
   display: flex;
-  height: 60vmin;
+  height: calc(70vmin - 3rem);
   min-height: 600px;
   gap: 1rem;
   @include mobile {
