@@ -16,44 +16,12 @@
 }
 
 body {
-  // width: 100vmin;
-  // height: 100vh;
   font-family: "IBMPlexSansKR-Regular";
   background-color: #e5e6ed;
-  // background-image: url("https://hankookhos.site/images/lee_portrait.png");
-  // background-attachment: fixed;
-  // background-position: bottom;
-  // background-repeat: no-repeat;
-  // background-image: url("/images/Wave.svg");
-  // background-size: 2500px 100vmin;
-  // background-position: -580px 0;
-  // background-size: contain;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
-  // animation: background 30s infinite alternate linear;
-  // @include mobile {
-  //   background-repeat: no-repeat;
-  //   animation: mbackground 30s infinite alternate linear;
-  //   background-size: 2500px 150vmax;
-  // }
-}
-
-.bg-portrait {
-  z-index: 1;
-  position: fixed;
-  bottom: 0;
-  object-fit: contain;
-  @include mobile {
-    left: -50%;
-  }
-  img {
-    width: 100vw;
-    @include mobile {
-      width: 200vw;
-    }
-  }
 }
 
 .title {
@@ -91,7 +59,6 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   width: min(60vmax, calc(100% - 20px));
-  // height: 300px;
   aspect-ratio: 16 / 10;
   background: #fff;
   overflow: hidden;
@@ -105,6 +72,10 @@ body {
       height: 100%;
     }
   }
+}
+
+img {
+  -webkit-user-drag: none;
 }
 
 #home-section,
