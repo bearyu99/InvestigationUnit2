@@ -63,6 +63,8 @@
   background-color: white;
   border: 2px solid $bordergray;
   border-radius: 30px;
+  overflow: auto !important;
+  @include scrollbar;
   @include mobile {
     min-height: max-content;
     margin-bottom: 0;
