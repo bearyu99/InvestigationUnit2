@@ -44,7 +44,7 @@
   .menu-group {
     transition: 0.5s;
     &.wide {
-      height: 450px;
+      height: 350px;
       border-radius: 37px;
     }
     @include mobile {
@@ -70,6 +70,9 @@
     ul {
       li {
         margin-right: 0 !important;
+        &:last-child {
+          margin-bottom: 1rem;
+        }
       }
     }
   }
