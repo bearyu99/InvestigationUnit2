@@ -4,10 +4,6 @@
 @import "_variables";
 
 #home-section {
-  transition: ease-in-out 0.3s;
-  * {
-    z-index: 5;
-  }
   .banner-wrap {
     height: 35vmin;
     color: white;
@@ -78,7 +74,7 @@
     }
     .card-content {
       position: relative;
-      padding: 1.5rem 2rem;
+      padding: 2rem 2rem;
       aspect-ratio: 1 / 1;
       // min-width: 250px;
       border: 2px solid $bordergray;
@@ -215,43 +211,10 @@
         text-decoration: underline;
         text-underline-position: under;
         cursor: pointer;
+        a {
+          color: white;
+        }
       }
     }
   }
 }
-
-// .img-wrap {
-//   position: absolute;
-//   width: 35vmax;
-//   height: 35vmax;
-//   right: 0;
-//   bottom: 0;
-//   overflow: hidden;
-//   .portrait-img {
-//     position: absolute;
-//     right: -19vmax;
-//     bottom: 0;
-//     width: 1280px;
-//     height: 720px;
-//   }
-//   .dr-name {
-//     position: absolute;
-//     right: 15vmax;
-//     bottom: 2em;
-//     display: flex;
-//     flex-direction: column;
-//     margin-top: 7em;
-//     span {
-//       font-size: 20pt;
-//       font-weight: 700;
-//       letter-spacing: 5px;
-//       line-height: 170%;
-//       &:nth-child(2) {
-//         color: gray;
-//         font-size: 8pt;
-//         font-weight: 100;
-//         letter-spacing: 0px;
-//       }
-//     }
-//   }
-// }
