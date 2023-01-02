@@ -76,11 +76,11 @@
       position: relative;
       padding: 2rem 2rem;
       aspect-ratio: 1 / 1;
-      // min-width: 250px;
       border: 2px solid $bordergray;
       border-radius: 25px;
       background-color: white;
-      overflow: hidden;
+      overflow: auto !important;
+      @include scrollbar;
       @include mobile {
         margin-bottom: 0;
         padding: 1.5rem;
@@ -92,8 +92,6 @@
 }
 
 .post {
-  overflow: auto !important;
-  @include scrollbar;
   .post-wrap {
     display: flex;
     align-items: center;
