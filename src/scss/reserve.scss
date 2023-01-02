@@ -179,9 +179,9 @@
 .r-content {
   width: 100%;
   @include mobile {
-    display: flex;
+    display: flex !important;
     flex-direction: column;
-    padding: 1.5rem;
+    padding: 1.5rem !important;
     margin-bottom: 10px;
     div {
       &:nth-child(even) {
