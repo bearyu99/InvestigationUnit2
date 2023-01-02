@@ -92,6 +92,8 @@
 }
 
 .post {
+  overflow: auto !important;
+  @include scrollbar;
   .post-wrap {
     display: flex;
     align-items: center;
@@ -114,6 +116,7 @@
     }
     .post-title {
       width: calc((100vw / 4) - 12rem);
+      min-width: 160px;
       white-space: nowrap;
       text-overflow: ellipsis;
       overflow: hidden;
