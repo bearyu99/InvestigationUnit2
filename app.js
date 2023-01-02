@@ -66,12 +66,12 @@ function sectionVisible(id) {
     e.style.display = "none";
     if (e.id == id + "-section") {
       e.style.display = "";
-      if (e.id == "home-section") {
-        // bg.style.visibility = "";
-        // bg.src = "/images/portrait.png";
-      } else {
-        // bg.style.visibility = "hidden";
-      }
+      // if (e.id == "home-section") {
+      //   // bg.style.visibility = "";
+      //   // bg.src = "/images/portrait.png";
+      // } else {
+      //   // bg.style.visibility = "hidden";
+      // }
     }
   });
 }
@@ -104,7 +104,7 @@ menu.forEach((list) => {
     toggleMenu();
     selectRemove();
     switch (id) {
-      case "home":
+      case "info":
         console.log("You clicked " + id);
         // Select 클래스 추가
         e.target.classList.add("select");
@@ -117,13 +117,6 @@ menu.forEach((list) => {
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
-      case "info":
-        console.log("You clicked " + id);
-        // Select 클래스 추가
-        e.target.classList.add("select");
-        // 섹션 활성화
-        sectionVisible(id);
-        break;
       case "convenience":
         console.log("You clicked " + id);
         // Select 클래스 추가
@@ -222,7 +215,7 @@ mainInfo.addEventListener("click", (e) => {
 
 //  Floor Slide
 var menu_b1 = ["지하 1층 안내도", "지하 1층 복도", "분향실"];
-var menu_1 = ["1층 안내도", "안내 데스크", "약국", "식당"];
+var menu_1 = ["1층 안내도", "안내 데스크", "회의실", "약국", "식당"];
 var menu_2 = ["2층 안내도", "진료실", "일반 병동"];
 var menu_3 = ["3층 안내도", "널스 스테이션", "진료실", "일반 병동"];
 var menu_4 = [
