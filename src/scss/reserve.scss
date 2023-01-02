@@ -36,7 +36,7 @@
 }
 
 .reserve-banner-option {
-  margin-bottom: 0;
+  // margin-bottom: 0;
 }
 
 .reserve-content-wrap {
@@ -65,7 +65,7 @@
   grid-template-rows: repeat(3, 1fr);
   grid-column-start: 1;
   justify-items: center;
-  width: 35vmax;
+  width: 45%;
   min-width: 250px;
   @include mobile {
     display: flex;
@@ -173,6 +173,7 @@
   grid-template-rows: repeat(3, 1fr);
   grid-column-start: 2;
   grid-gap: 2rem;
+  width: 100%;
   padding: 2rem;
   @include mobile {
     display: flex;
