@@ -95,8 +95,6 @@
 nav {
   z-index: 10;
   position: fixed;
-  // top: 30px;
-  // left: 50px;
   padding-bottom: 30px;
   width: calc(100vmax - 100px);
   @include mobile {
@@ -109,8 +107,6 @@ nav {
     margin-right: 5em;
   }
   ul {
-    // position: absolute;
-    // right: 0;
     @include mobile {
       position: inherit;
       display: none;
