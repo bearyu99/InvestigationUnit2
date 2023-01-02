@@ -97,12 +97,16 @@
       font-weight: 700;
       color: $strong;
       text-indent: 0.5rem;
+      @include mobile {
+        text-indent: 0;
+      }
     }
   }
   .r-content {
     display: block;
     background-color: #f4f4f4;
-    overflow: hidden;
+    overflow: hidden !important;
+    z-index: 999 !important;
     div {
       &:nth-child(even) {
         @include mobile {
@@ -114,6 +118,7 @@
     @include mobile {
       width: 100%;
       height: max-content;
+      padding: 0 !important;
     }
   }
 }
@@ -164,9 +169,6 @@
 .swiper-slide img {
   width: 100%;
   object-fit: contain;
-  @include mobile {
-    border-radius: 25px;
-  }
 }
 
 #section-main-building {
