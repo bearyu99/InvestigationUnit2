@@ -9,11 +9,16 @@
       crossorigin="anonymous"
     ></script>
     <script src="https://unpkg.com/@panzoom/panzoom@4.5.1/dist/panzoom.min.js"></script>
-    <!-- <script
-      type="module"
-      src="https://cdnjs.cloudflare.com/ajax/libs/cheerio/1.0.0-rc.12/lib/cheerio.min.js"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.2.2/axios.min.js"></script> -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/8.4.5/swiper-bundle.min.js"></script>
     <title>한국요양병원</title>
   </head>
   <body>
@@ -54,7 +59,7 @@
     </nav>
 
     <!-- Main Page -->
-    <section id="home-section">
+    <section id="home-section" class="main-section">
       <div class="banner-wrap">
         <div class="banner-img-wrap">
           <img class="banner-img" src="./images/screenshot/main_building.png" />
@@ -180,8 +185,8 @@
       </div> -->
     </section>
     <!-- Reservation Page -->
-    <section id="reserve-section" style="display: none">
-      <div class="banner-wrap reserve-banner-option">
+    <section id="reserve-section" class="main-section" style="display: none">
+      <div class="banner-wrap">
         <div class="banner-img-wrap">
           <img
             class="banner-img"
@@ -289,7 +294,7 @@
     </section>
 
     <!-- Info Page -->
-    <section id="info-section" style="display: none">
+    <section id="info-section" class="main-section" style="display: none">
       <div class="banner-wrap">
         <div class="banner-img-wrap">
           <img
@@ -309,12 +314,16 @@
     </section>
 
     <!-- Convenience Page -->
-    <section id="convenience-section" style="display: none">
+    <section
+      id="convenience-section"
+      class="main-section"
+      style="display: none"
+    >
       <div class="banner-wrap">
         <div class="banner-img-wrap">
           <img class="banner-img" src="./images/screenshot/cafe.png" />
         </div>
-        <div class="banner-content-wrap convenience-banneer-option">
+        <div class="banner-content-wrap">
           <p class="title">시설안내</p>
           <p class="subtitle">
             저희 한국요양병원은 원활한 서비스를 제공해드리기 위해 온라인 예약을
@@ -323,10 +332,189 @@
           </p>
         </div>
       </div>
+      <div class="reserve-content-wrap convenience-option">
+        <ul id="floor-list" class="l-content">
+          <p class="floor-title">본관</p>
+          <div class="title-underline"></div>
+          <li id="floor-b1">B1F</li>
+          <li id="floor-1">1F</li>
+          <li id="floor-2">2F</li>
+          <li id="floor-3">3F</li>
+          <li id="floor-4">4F</li>
+        </ul>
+        <div class="r-content">
+          <!-- 본관 -->
+          <section id="section-main-building" class="swiper-slide">
+            <img class="main-building-img" src="/images/floor_info/main.png" />
+          </section>
+
+          <!-- 지하 1층 -->
+          <section
+            id="section-floor-b1"
+            class="floor-section"
+            style="display: none"
+          >
+            <div class="swiper-container floorb1-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="/images/floor_info/b1f.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/funeral_hall_2.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/funeral_hall_1.png" />
+                </div>
+              </div>
+
+              <!-- 네비게이션 버튼 -->
+              <div class="swiper-button-next"></div>
+              <!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+              <div class="swiper-button-prev"></div>
+              <!-- 이전 버튼 -->
+
+              <!-- 페이징 -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+
+          <!-- 1층 -->
+          <section
+            id="section-floor-1"
+            class="floor-section"
+            style="display: none"
+          >
+            <div class="swiper-container floor1-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="/images/floor_info/1f.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/information_desk_1.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/pharmacy.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/restaurant_1.png" />
+                </div>
+              </div>
+
+              <!-- 네비게이션 버튼 -->
+              <div class="swiper-button-next"></div>
+              <!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+              <div class="swiper-button-prev"></div>
+              <!-- 이전 버튼 -->
+
+              <!-- 페이징 -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+
+          <!-- 2층 -->
+          <section
+            id="section-floor-2"
+            class="floor-section"
+            style="display: none"
+          >
+            <div class="swiper-container floor2-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="/images/floor_info/2f.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/doctors_office.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/general_ward.png" />
+                </div>
+              </div>
+
+              <!-- 네비게이션 버튼 -->
+              <div class="swiper-button-next"></div>
+              <!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+              <div class="swiper-button-prev"></div>
+              <!-- 이전 버튼 -->
+
+              <!-- 페이징 -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+
+          <!-- 3층 -->
+          <section
+            id="section-floor-3"
+            class="floor-section"
+            style="display: none"
+          >
+            <div class="swiper-container floor3-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="/images/floor_info/3f.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/3rd_floor_nurse_station.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/doctors_office.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/general_ward.png" />
+                </div>
+              </div>
+
+              <!-- 네비게이션 버튼 -->
+              <div class="swiper-button-next"></div>
+              <!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+              <div class="swiper-button-prev"></div>
+              <!-- 이전 버튼 -->
+
+              <!-- 페이징 -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+
+          <!-- 4층 -->
+          <section
+            id="section-floor-4"
+            class="floor-section"
+            style="display: none"
+          >
+            <div class="swiper-container floor4-swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <img src="/images/floor_info/4f.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/4th_floor_nurse_station.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/exercise_treatment_room.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/cafe.png" />
+                </div>
+                <div class="swiper-slide">
+                  <img src="/images/screenshot/premium_room.png" />
+                </div>
+              </div>
+
+              <!-- 네비게이션 버튼 -->
+              <div class="swiper-button-next"></div>
+              <!-- 다음 버튼 (오른쪽에 있는 버튼) -->
+              <div class="swiper-button-prev"></div>
+              <!-- 이전 버튼 -->
+
+              <!-- 페이징 -->
+              <div class="swiper-pagination"></div>
+            </div>
+          </section>
+        </div>
+      </div>
     </section>
 
     <!-- Service Page -->
-    <section id="service-section" style="display: none">
+    <section id="service-section" class="main-section" style="display: none">
       <div class="title-box">
         <p class="title">고객센터</p>
         <p class="subtitle">
