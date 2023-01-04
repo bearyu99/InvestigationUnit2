@@ -96,6 +96,7 @@
     display: flex;
     align-items: center;
     margin-bottom: 1.5rem;
+    cursor: pointer;
     @include mobile {
       margin-bottom: 0;
       &:not(:last-child) {
