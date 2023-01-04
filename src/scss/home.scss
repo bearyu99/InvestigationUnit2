@@ -145,7 +145,8 @@
         text-indent: 1rem;
       }
       &:nth-child(2) {
-        margin-top: 2.25rem;
+        margin-top: calc(3.15vw * 0.8);
+        // margin-top: 2.25rem;
         margin-bottom: 0.5rem;
         font-weight: 700;
       }
@@ -153,18 +154,23 @@
   }
   .number {
     color: $lightblue;
-    font-size: 40px;
+    font-size: 3.15vw;
     font-weight: 900;
+    @include mobile {
+      font-size: 42px;
+    }
     &::before {
       content: "";
-      z-index: 15 !important;
       position: absolute;
       width: 85%;
       height: 2px;
       left: 50%;
-      top: 100px;
+      top: calc(3.15vw * 2.2);
       transform: translateX(-50%);
       background-color: $bordergray;
+      @include mobile {
+        top: 40%;
+      }
     }
   }
 }

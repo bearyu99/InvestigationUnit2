@@ -7,6 +7,7 @@ const ham = document.querySelector(".menu");
 const bg = document.querySelector(".bg-portrait > img");
 const nav = document.querySelector(".nav-btn-group");
 const map = document.getElementById("map");
+const faqMap = document.getElementById("faq-map");
 let menuWide = false;
 
 // Map Panzoom
@@ -15,16 +16,30 @@ const panzoom = Panzoom(map, {
   minScale: 1.2,
   startScale: 3,
   animate: true,
+  step: 0.7,
   cursor: "grab",
   contain: "outside",
 });
+panzoom.zoom(2.5);
 map.parentElement.addEventListener("wheel", panzoom.zoomWithWheel);
+
+// Map Panzoom
+const faqPanzoom = Panzoom(faqMap, {
+  maxScale: 7,
+  minScale: 1.2,
+  startScale: 2.75,
+  animate: true,
+  step: 0.7,
+  cursor: "grab",
+  contain: "outside",
+});
+// faqPanzoom.zoom(2);
+faqMap.parentElement.addEventListener("wheel", faqPanzoom.zoomWithWheel);
 
 // Modal Popup
 function popOpen() {
   var modalPop = document.querySelector(".modal-wrap");
   var modalBg = document.querySelector(".modal-bg");
-
   modalPop.style.display = "initial";
   modalBg.style.display = "initial";
 }
@@ -130,6 +145,8 @@ menu.forEach((list) => {
         e.target.classList.add("select");
         // 섹션 활성화
         sectionVisible(id);
+        faqPanzoom.pan(96, -18);
+        faqPanzoom.zoom(2.75);
         break;
       default:
         break;

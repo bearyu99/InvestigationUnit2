@@ -49,7 +49,9 @@
     }
   }
   .r-content {
-    padding: 2rem;
+    position: relative;
+    // padding: 2rem;
+    overflow: hidden !important;
   }
 }
 

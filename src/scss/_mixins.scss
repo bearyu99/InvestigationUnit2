@@ -45,7 +45,7 @@ $mobile: 1024px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 30vmax;
+  width: max(30vmax, 400px);
   height: 100%;
   padding: 2rem;
   left: 0;
