@@ -55,11 +55,13 @@
 
 .container {
   position: relative;
+  padding-bottom: 2rem;
   @include mobile {
     top: 0;
     height: max-content;
     max-width: 100%;
     padding-right: 0;
+    padding-bottom: 0;
   }
   .faq-title {
     font-size: 26px;
@@ -167,7 +169,7 @@
     }
     + .accordion-content {
       opacity: 1;
-      max-height: 12em;
+      max-height: max-content;
     }
   }
   .accordion-content {
@@ -181,8 +183,31 @@
       line-height: 1.6;
       margin: 1.5em;
       color: white;
+      text-align: justify;
       @include mobile {
         font-size: 0.9rem;
+      }
+    }
+    strong {
+      font-weight: 900;
+      text-decoration: underline white 2px;
+      text-underline-offset: 0.2em;
+    }
+    a {
+      color: white;
+      text-decoration: none;
+    }
+    ul {
+      margin: 1.5em;
+      li {
+        font-size: 0.9rem;
+        font-weight: 300;
+        line-height: 1.2;
+        text-indent: 0.75em;
+        color: white;
+        &::before {
+          content: "-";
+        }
       }
     }
   }
