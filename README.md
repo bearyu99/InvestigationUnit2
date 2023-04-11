@@ -1,4 +1,6 @@
-<img src="/images/brand-logo-blue.png" width="35%" height="35%" />
+&nbsp;
+<p align="center"><img src="/images/brand-logo-blue.png" width="30%" height="30%" /></p>
+&nbsp;
 
 # [InvestigationUnit2](https://bearyu99.github.io/InvestigationUnit2)
 
