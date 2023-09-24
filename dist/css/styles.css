@@ -389,7 +389,7 @@ nav ul li:hover {
 }
 .sponser .card-content {
   padding: 0 !important;
-  background-image: url(./images/premier.webp);
+  background-image: url(../../images/premier.webp);
   background-position: 50% 50%;
   background-size: 105%;
   background-repeat: no-repeat;
