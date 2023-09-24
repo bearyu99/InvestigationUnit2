@@ -2,7 +2,6 @@ const menu = document.querySelectorAll("#menu li");
 const floorList = document.querySelectorAll("#floor-list li");
 const mainInfo = document.querySelector(".floor-title");
 const mainInfoSection = document.querySelector("#section-main-building");
-// const img = "https://hankookhos.site/images/lee_portrait.png";
 const ham = document.querySelector(".menu");
 const bg = document.querySelector(".bg-portrait > img");
 const nav = document.querySelector(".nav-btn-group");
@@ -81,12 +80,6 @@ function sectionVisible(id) {
     e.style.display = "none";
     if (e.id == id + "-section") {
       e.style.display = "";
-      // if (e.id == "home-section") {
-      //   // bg.style.visibility = "";
-      //   // bg.src = "/images/portrait.png";
-      // } else {
-      //   // bg.style.visibility = "hidden";
-      // }
     }
   });
 }
@@ -94,12 +87,9 @@ function sectionVisible(id) {
 document.body.addEventListener("click", (e) => {
   const pNode = e.target.parentNode;
   const div = document.getElementById("mobile-menu");
-  // 메뉴가 열려있는 상태에서
   if (div.classList.contains("wide")) {
     let selectNav = e.target.closest("#mobile-nav");
-    // #mobile-nav가 아닌 다른 곳을 클릭하면
     if (!selectNav) {
-      // 메뉴를 접는다
       ham.classList.remove("open");
       document.querySelector(".menu-group").classList.remove("wide");
       document.querySelector("#menu").classList.remove("visible");
